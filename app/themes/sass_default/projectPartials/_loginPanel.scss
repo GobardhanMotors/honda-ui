@@ -1,0 +1,216 @@
+.login-panel-container {
+  padding-top: 1em;
+  h2 {
+    font-size: 16px;
+    padding: 0.5em 0 0.25em 0;
+  }
+  @include breakpoint(768px){
+    padding-top: 0;
+    width: 33%;
+    float: left;
+    + .main{
+      max-width: 64%;
+    }
+  }
+  .login-btn {
+    width: 5em;
+    float: right;
+  }
+
+}
+
+
+#loginModal {
+  .table td {
+    line-height: 1.61803398875;
+  }
+}
+
+#login-panel {
+  @include breakpoint(768px){
+    position: absolute;
+    bottom: 120px;
+    top: 0;
+    max-width: 320px;
+    width: 100%;
+    margin: -80px 0 0 20px;
+  }
+  margin: 0 1em 1em 1em;
+  background-color: white;
+  padding: 0.5em 1.5em 1.5em 1.5em;
+  border: 1px solid #CCC;
+  
+  .forgot-password-container {
+    padding-top: 2em;
+    margin-top: 2em;
+    min-height: 164px;
+    .forgot-pw-btn {
+      float: right;
+      margin-left: 2px;
+      margin-right: 3px;
+    }
+    .forgot-pw-cancel {
+      float: right;
+    }
+    .check-email {
+      font-weight: bold;
+      margin-top: 4.5em;
+      color: green;
+    }
+  }
+  .well {
+    background-color: white;
+  }
+}
+
+#user-login-table {
+  width: 93%;
+  margin: auto;
+    thead {
+    th {
+      @extend %table_header;
+      @extend %table_cell_border;
+    }
+  }
+  td input[type="radio"] {
+    width: 22%;
+  }
+}
+
+.change-password-form {
+  margin-top: 2em;
+  .spinner {
+    margin-left: auto;
+    margin-right: auto;
+    width: 8%;
+    display: block;
+    margin-bottom: 1em;
+  }
+}
+
+.roleSelectBtn {
+  margin-left: auto;
+  margin-right: auto;
+  width: 6em;
+}
+
+.logout {
+  cursor: pointer;
+}
+
+.access-header {
+  width: 100%;
+  background-color: #fff;
+  .thankyou-logout {
+    text-transform: inherit;
+    text-align: center;
+  }
+  @include breakpoint(768px){
+    margin-top: -20px;
+    .thankyou-logout {
+      padding-top: 47px;
+      font-size: 3.5em;
+    }
+  }
+}
+
+
+
+img.medseek-logout {
+  vertical-align: -4%;
+  margin-bottom: -9px;
+}
+
+.access-main {
+  background: image-url('bg_login.jpg') right bottom no-repeat;
+
+  @include background-size(cover);
+  position: relative;
+  .relogin-button-container {
+    position: relative;
+    width: 120px;
+    margin-left: 1em;
+    padding-top: 10px;
+    .relogin {
+      width: 120px;
+      height: auto;
+    }
+  }
+  .logout-text {
+    padding-top: 15em;
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+h1.welcome {
+  font-weight: 300;
+  color: #4d4d4d;
+  strong {
+    font-weight: 700;
+    color: black;
+  }
+  text-align: center;
+  @include breakpoint(768px){
+    text-align: left;
+    margin: 50px 0 20px 360px;
+  }
+  img {
+    width: 100%;
+    max-width: 540px;
+  }
+}
+
+.home-text-wrapper {
+  padding: 2em;
+  @include breakpoint(768px){
+    padding-top: 5em;
+    margin-left: 340px;
+    max-width: 500px;
+    .home-text { 
+      font-size: 1.25em;
+      line-height: 1.75;
+    }
+  }
+  h2.headline {
+    font-weight: 300;
+    color: #526e83;
+    padding-bottom: 0.25em;
+    em {
+      font-size: 1.25em;
+    }
+  }
+}
+#site-footer.access-footer {
+  @include breakpoint(768px){
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 1em;
+    height: auto;
+
+  }
+  max-height: none;
+  max-width: none;
+  padding: 1em;
+  background-color: black;
+  color: white;
+}
+
+.logging-in {
+  height: 70px;
+  margin: 0 auto;
+  width: 80px;
+  background: url("../../images/spinner.gif") no-repeat;
+}
+
+.incorrect-password-login p {
+ text-align: center;
+}
+.login-spinner{
+  margin-top: 2px;
+  margin-right: 5px;
+  float: right;
+}

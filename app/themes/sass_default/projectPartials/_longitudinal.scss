@@ -1,0 +1,341 @@
+%icons-lv {
+    padding-left: 40px;
+    @extend %block30x30 !optional;
+}
+
+%icons-lv-chart-r {
+    position: relative;
+    top: 30px;
+    padding: 15px;
+    float: left;
+    left: 30px;
+    margin-left: -30px;
+    @extend %block30x30;
+}
+
+%icons-lv-chart {
+    position:absolute;
+    padding: 15px;
+    float: left;
+    left: 30px;
+    margin-left: -30px;
+    @extend %block30x30;
+}
+.lvmodule-btn span {
+	  button {
+	  	color: #333333;
+		  background-image: none;
+		  border: 1px solid #cccccc;
+		  border-radius: 4px;
+		  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+		  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	    min-height: 40px;
+		  width: 62px;
+		  padding-left: 7px;
+		  padding-right: 7px;
+		  float: left;
+		  margin-right: 5px;
+	  }
+}
+//Module specific styles
+.lvmodule {
+  .tooltip-inner{
+    max-width: 250%;
+    .reprt-tooltip-wdt {
+      @include no-bullets();
+      padding-left: 2px;
+      width : 225px;
+      text-align: left;
+      li{
+      	padding-bottom: .25em 0;
+        &:nth-child(even){
+        background-color: darken(#fff,7%);
+        }
+      }
+
+    }
+  }
+  .data-measures{
+    margin-right: 1em;
+    .label-line{
+      position: relative;
+      top : -12px;
+      left: 0;
+    }
+  }
+  .btn-primary, .button-secondary{
+    height: 32px;
+    @include border-radius;
+  }
+  .grid-filter{
+    border: 1px #ddd solid;
+    @include border-radius;
+    @include contrasted(#fff);
+    padding: .5em 0;
+    .label-inline {
+      padding-top: .5em;
+      display: inline-block;
+    }
+    .col-md-1 >span{
+      padding-top: .75em;
+      display: inline-block;
+    }
+
+  }
+  .grid-date-range{
+    @extend .grid-filter;
+    margin-top: 1em;
+    button{
+      margin-right: .5em;
+    }
+  }
+  .form-control {
+    font-size: 12px;
+  }
+  .panel-body {
+    padding: 1px;
+  }
+  .checkbox {
+    display: block;
+    min-height: 20px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    width: 100px;
+  }
+  .label-line {
+    left : 25px;
+  }
+  .move-top {
+    margin-top: -8px;
+  }
+  .move-left {
+    margin-left: 20px;
+  }
+  .padding-top {
+    padding-top: 2px;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .text-width {
+    width: 88px;
+  }
+  .time-content {
+    margin-top: 15px;
+    width: 100%;
+  }
+  .btnsearch {
+    min-width: 16px;
+    height: 30px;
+    margin-left: -4px;
+  }
+  .search-in-ctrl {
+    width: 86%;
+    height: 200px;
+    overflow-y: scroll;
+    list-style-type: none;
+    margin-left: 0px;
+    background-color: #fff;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    ul {
+      margin-left: 20px;
+    }
+  }
+  .chart-panel-ht {
+    border: 1px solid #999999;
+    border-radius: 4px;
+    height: 400px;
+    margin: 30px 0 3px;
+  }
+  .date-line-height {
+    vertical-align: top;
+    text-align: left;
+    height: 100px;
+    font-size: 11px;
+  }
+  .slide-content {
+
+    
+  }
+  .slider-date {
+
+    margin-left: -20px;
+    margin-right: 0;
+    margin-top: -10px;
+    font-size: 10px;
+    color: #333;
+  }
+
+  .noUi-handle:before, .noUi-handle:after {
+    display: none;
+  }
+  .btn-width-s {
+    padding-left: 3px;
+    padding-right: 3px;
+    height: 31px;
+    margin-top: 1px;
+    float: left;
+  }
+  .move-right {
+    margin-left: 6px;
+  }
+  .icon-medications {
+  @extend %icons-lv;
+  @extend .General-icon_medications_526e83_30x30;
+
+}
+
+.icon-task-scheduled {
+  @extend %icons-lv;
+  @extend .General-icon_scheduled_tasks_ff9900_30x30;
+}
+
+.icon-encounters {
+  @extend %icons-lv;
+  @extend .General-icon_encounters_8e7cc3_30x30;
+}
+
+.icon-task-complete {
+  @extend %icons-lv;
+  @extend .General-icon_check_6aa84f_30x30;
+}
+
+.icon-task-open {
+  @extend %icons-lv;
+  @extend .General-icon_list_6fa8dc_30x30;
+}
+
+.icon-missed-opportunity {
+  @extend %icons-lv;
+  @extend .General-icon_notification_e06666_30x30;
+}
+
+.icon-medications-chart {
+  @extend %icons-lv-chart-r;
+  @extend .General-icon_medications_526e83_30x30;
+  @include med-round-icon(#526e83);
+ //  + div .tooltip-inner {
+ //  border-top-color: #526e83;
+ //}
+}
+
+.icon-medications-chart-n {
+  @extend %icons-lv-chart-r;
+}
+
+.icon-tasks-scheduled-chart {
+  @extend %icons-lv-chart;
+  @extend .General-icon_scheduled_tasks_ff9900_30x30;
+  @include med-round-icon(#f90);
+  height: 30px;
+  top: 150px;
+
+}
+
+.icon-encounters-chart {
+  @extend %icons-lv-chart;
+  @extend .General-icon_encounters_8e7cc3_30x30;
+  @include med-round-icon(#8e7cc3);
+  height: 30px;
+  top: 70px;
+
+}
+
+.icon-tasks-complete-chart {
+  @extend %icons-lv-chart;
+  @extend .General-icon_check_6aa84f_30x30;
+  @include med-round-icon(#6aa84f);
+  height: 30px;
+  top: 190px;
+
+}
+
+.icon-tasks-open-chart {
+  @extend %icons-lv-chart;
+  @extend .General-icon_list_6fa8dc_30x30;
+  @include med-round-icon(#6fa8dc);
+  height: 30px;
+  top: 110px;
+
+}
+
+.icon-missed-opportunities-chart {
+  @extend %icons-lv-chart;
+  @extend .General-icon_notification_e06666_30x30;
+  @include med-round-icon(#e06666);
+  height: 30px;
+  top: 230px;
+
+}
+
+.icon-bps {
+  @extend %icons-lv;
+  @extend .General-icon_bps_30x30;
+}
+
+.icon-bpd {
+  @extend %icons-lv;
+  @extend .General-icon_bpd_30x30;
+}
+
+.icon-alc {
+  @extend %icons-lv;
+  @extend .General-icon_alc_30x30;
+}
+
+.icon-ccs {
+  @extend %icons-lv;
+  @extend .General-icon_ccs_30x30;
+}
+}
+.rotvertical
+{
+	@include rotate(-270deg);
+
+  // -webkit-transform: rotate(-270deg);
+  // -moz-transform: rotate(-270deg);
+  // -ms-transform: rotate(-270deg);
+}
+.rothorizental
+{
+  @include rotate(0deg);
+  // -webkit-transform: rotate(0deg);
+  // -moz-transform: rotate(0deg);
+  // -ms-transform: rotate(0deg);
+}
+
+%chart-dates{
+  position: relative;
+  color: #000;
+  font-size: 11px;
+}
+.chart-dates-v {
+  @extend %chart-dates;
+  margin-top: 5px;
+}
+
+.chart-dates-h {
+  margin-top: -15px;
+  @extend %chart-dates;
+}
+
+.slider-dates-v {
+  margin-top: 45px;
+  position: relative;
+}
+
+.longitudinal-chart {
+  float: left;
+  width: 100%;
+}
+
+.date-line {
+  border-radius: 0;
+  border-right: 1px solid #545454;
+  float: left;
+  height: 6px;
+  margin-top: -26px;
+  padding-left:9px;
+  position: relative;
+}

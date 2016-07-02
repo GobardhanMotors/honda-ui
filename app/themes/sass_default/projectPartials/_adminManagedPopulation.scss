@@ -1,0 +1,49 @@
+.administrator{
+  .manage_population {
+   
+    .search {
+      > div{
+          @include span (6 of 12);
+          label {
+            @include span (5 of 12 first);
+            text-align: right;
+          }
+          input[type=text] {
+            @include span (6 of 12 at 5);
+            margin-bottom: 0.5em;
+          }
+
+      }
+     .action-buttons{
+      @include span (15% last);
+      margin-top : 2em;
+     }
+    }
+    .radios {
+    	legend {
+        @include span (1 of 12 first);
+        border: none;
+        font-size: 1.25em;
+        font-weight: bold;
+      }
+
+      label {
+        height: 1em;
+        margin-top: 0.4em;
+        width: auto;        
+      }
+      input {
+        width: auto;
+        margin-left : 1em;
+      }
+    }
+
+    .addreminderbtn {
+      height: 37px;
+      width: 37px;  
+      background-image:"../../../themes/default/img/icons/General/icon_add_6fa8dc_30x30.png";
+      background-repeat:no-repeat;
+    }
+
+  }
+}

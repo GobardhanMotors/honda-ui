@@ -1,0 +1,213 @@
+//NEED TO REPLACE THIS SECTON WITH PROPER SYNTAX
+
+.nggrid {border: 1px solid rgb(212,212,212); width: 100%; height: 400px;}
+
+.notification
+{
+     background: #93c47d;
+     padding:7px;
+}
+.med-modal-inner header h3{
+  font-weight: bold;
+}
+.add_edu_content {
+  padding: 5px 0px 5px 0px;
+  .add-edu-frm-ctrl{
+
+    padding-top: 1em;
+    clear: both;
+    .edu-frm-top-invalid-msg{
+      color:#e06666;
+    }
+    .edu-frm-due-date-btn{
+      display:inline;
+      button{
+        padding:3px;height: 25px;
+      }
+    }
+    input.ng-dirty.ng-invalid ~ span.validation{
+      color:#e06666;
+    }
+    select.ng-dirty.ng-invalid ~ span.validation{
+      color:#e06666;
+    }
+    select.ng-pristine.ng-invalid ~ span.validation{
+      display:none;
+    }
+    input.ng-pristine.ng-invalid ~ span.validation{
+      display:none;
+    }
+    .sub-fld-caption{
+      margin-left: 20px;
+      font-weight: normal;
+      min-width: 167px;
+    }
+    .ng-dirty.ng-invalid{
+      border:1px solid #e06666;
+    }
+    .ng-pristine.ng-invalid{
+      box-shadow: none;
+      border:1px solid #A9A9A9;
+    }
+    .validation{
+    }
+    .required{
+      color:#e06666;
+      float:left;
+    }
+    /*margin-top: 10px;*/
+    width: 100%;
+    input, select, textarea{
+      /*width:33%;*/
+    }
+    label{
+      display: inline-block;
+      /*min-width: 180px;*/
+	  padding-top: 8px;
+    }
+	.edu-label{
+	min-width: 180px
+	}
+    .add-edu-frm-file-list{
+      margin-left: 150px;
+      list-style: none;
+    }
+    .add-edu-frm-lib-list{
+      /*width:200px;*/
+    }
+    .add-edu-frm-minus, .add-edu-frm-plus{
+      font-weight: bold;
+      font-size: 150%;
+      border: 1px solid #000000;
+      cursor: pointer;
+      opacity: 0.5;
+      padding-right: 5px;
+      padding-left: 5px;
+    }
+    .add-edu-frm-minus:hover, .add-edu-frm-plus:hover{
+      opacity: 1;
+    }
+    .add-edu-frm-minus{
+      position: absolute;
+      padding: 0px 5px 5px 5px;
+      font-size: 300%;
+    }
+    select{
+      margin-right: 5px;
+      float: left;
+    }
+    #eduLibListSelected{
+      min-width: 100px;
+    }
+    #eduLibDocUpload + ul {
+      margin-left: 150px;
+      li{
+        list-style: none;
+        a.add-edu-rm-lib-file{
+          text-decoration: none;
+          cursor: pointer;
+          font-weight: bold;
+          padding-left: 5px;
+          :hover{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+.add-edu-frm{
+  text-align:left;padding:10px 5px 10px 5px;width:auto;
+}
+
+.patient-edu-mat-hrd {
+  margin-top: -15px;
+  .edu-mat-popup-launch{
+    float:right;margin-top:-22px;clear:both;
+  }
+}
+
+.add-edu-frm-file-pick {
+  display:inline;
+  input{
+    width:90px;
+    display: inline;
+    color:transparent;
+  }
+}
+.add-edu-frm-doc-msg {
+  margin-left:110px;
+  .add-edu-frm-doc{
+    width:650px;text-align:left;
+  }
+}
+
+#documentTypeValidation.add-edu-frm-doc-msg {
+    display:none;
+}
+
+.menu{
+  .menuItem{
+    .lnav-conditions{
+      max-height: 150px;
+      overflow-y:scroll;
+      li > div:first-child {
+        font-weight: bold;
+      }
+    }
+    .lnav-sub-sec-line{
+      text-align: right;
+    }
+  }
+}
+
+.view-icon {
+  background-image: url(../../themes/default/img/ico_view.png);
+  min-width: 30px;
+  height: 20px;
+  margin-top: -2px;
+  display: block;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  float: left;
+}
+.download-icon{
+  background-image: url(../../themes/default/img/ico_downLoad.png);
+  min-width: 30px;
+  height: 20px;
+  margin-top: -2px;
+  display: block;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  float: left;
+}
+.eduction-material{
+	.alert-success {
+		background:#E1EDDB;
+		border: 1px solid #6AA84F;
+		border-radius: 3px;
+		color: #6AAF84;
+	}
+	.alert-error {
+		background: #F8E0E0;
+		border: 1px solid #E06666;
+		border-radius:3px;
+		color: #E06666;
+	}
+}
+.stacked-top-med{
+margin-top: 10px;
+}
+
+.badge {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-left: 40px;
+  span {
+    display: inline-block;
+    line-height: 22px;
+  }
+}

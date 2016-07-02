@@ -1,0 +1,28 @@
+section.patient-goals-listing {
+  .panel-heading {
+    padding-top: 5px;
+    padding-left: 5px;
+    height: 39px;
+  }
+  .goal-header {
+    margin-left: 25px;
+  }
+  .duedate-header, .actions-header {
+    margin-left: -10px;
+  }
+  .goal-title {
+    padding-top: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .goal-duedate {
+    padding-top: 6px;
+  }
+  .add-goals-activity {
+    margin-bottom: 1em;
+  }
+  .patient-activity {
+    margin-bottom: 1em;
+  }
+}

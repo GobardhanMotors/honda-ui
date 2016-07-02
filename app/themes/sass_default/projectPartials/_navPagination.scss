@@ -1,0 +1,233 @@
+.grid-pager { 
+  width: 98%;
+  background-color: #eaeaea;
+  border-top: 1px solid #d4d4d4; 
+  padding-top: 8px; 
+  padding-bottom: 10px;
+}
+
+.page-option {
+  width: 100px;  
+  height: 28px;    
+  padding: 4px 12px;
+}
+
+.page-current {
+  display: inline-block;
+  border-radius: 4px;
+  width: 50px;
+  height: 26px;
+  padding: 4px 4px;
+}
+
+.pager-ctrl input, .pager-ctrl select {
+  display: inline-block;
+  width: 15%;
+  padding: 2px 12px;
+  background-image: none;
+  border-radius: 4px;
+}
+
+
+//directives
+.table-pager {
+  padding: 10px 0;
+  @include span(full);
+  min-width: 50%;
+  //@extend %table_header;
+
+  height: auto;
+  &-info {
+    @include span(35% first break no-gutters);
+    padding: 6px 0;
+  }
+  &-buttons {
+    @include span(65% last no-gutters);
+    min-width: 40%;
+    white-space: nowrap;
+    text-align: right;
+  //  padding-right: 0;
+  }
+  &-first,
+  &-prev,
+  &-next,
+  &-last {
+    @extend .btn;
+    @extend .btn-secondary;
+    min-width: 30px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    border-radius: 30px;
+    &:before {
+      width: auto;
+    }
+  }
+  &-first {
+    //@include icon-font(to-start);
+  }
+  &-prev {
+    //@include icon-font(left-dir);
+    .pager-first-triangle {
+      margin-left: 0;
+    }
+  }
+  &-next {
+    //@include icon-font(right-dir);
+    .pager-last-triangle {
+      margin-left: 2px;
+    }
+  }
+  &-last {
+    //@include icon-font(to-end);
+
+  }
+  .page {
+    margin: 0 10px;
+    button {
+      @extend .btn;
+      @extend .btn-secondary;
+      height: 30px;
+      min-width: 26px;
+      line-height: 1;
+    }
+    label {
+      font-weight: normal;
+      width: 35px;
+      float: none;
+    }
+    input {
+      width: 70px;
+      margin: 0;
+      padding: 0 6px;
+      display: inline-block;
+    }
+  }
+
+}
+
+.ngFooterPanel {
+  background-color: transparent;
+}
+
+.ngFooterTotalItems {
+  padding-left: 0;
+  margin-top: 7px;
+}
+
+.ngPagerControl {
+  margin-right: 0 !important;
+}
+
+.ngPagerCurrent {
+  margin-left: 10px;
+  height: 30px !important;
+  margin-top: 0 !important;
+  padding: 0 6px !important;
+  width : 70px !important;
+}
+
+.ngTotalSelectContainer {
+  margin-left: 0;
+}
+
+.ngGridMaxPagesNumber {
+  margin-top: 2px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+
+.ngRowCountPicker {
+  display: none;
+  margin-right: 15px !important;
+  .ngLabel {
+    margin-top: 7px !important;
+    margin-right: 5px;
+  }
+  select {
+    height: 30px !important;
+    width: 50px !important;
+  }
+}
+
+.ngPagerButton {
+  @extend .btn;
+  @extend .btn-secondary;
+  min-width: 30px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 30px;
+}
+
+.ngPagerNextTriangle {
+  margin-left: 2px;
+}
+
+.pager-first-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 8.7px 5px 0;
+  border-color: transparent palette(blue, dark) transparent transparent;
+  margin-left: 2px;
+  margin-left: 0;
+}
+
+.pager-first-bar {
+  width: 10px;
+  border-left: 2px solid palette(blue, dark);
+  margin-top: -6px;
+  height: 12px;
+  margin-left: -3px;
+}
+
+.pager-last-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 0 5px 8.7px;
+  border-color: transparent transparent transparent palette(blue, dark);
+  margin-left: -1px;
+}
+
+.pager-last-bar {
+  width: 10px;
+  border-left: 2px solid palette(blue, dark);
+  margin-top: -6px;
+  height: 12px;
+  margin-left: 1px;
+}
+
+
+
+button {
+  .ngPagerFirstTriangle, .ngPagerLastTriangle, .pager-first-triangle, .pager-last-triangle {
+    display: inline-block;
+  }
+  .ngPagerFirstTriangle, .pager-first-triangle {
+    border-right-color: palette(blue, dark);
+    @include transition(border-right-color 100ms linear);
+  }
+  .ngPagerLastTriangle, .ngPagerLastBar, .ngPagerFirstBar, .pager-last-triangle, .pager-last-bar, .pager-first-bar  {
+    border-left-color: palette(blue, dark);
+    @include transition(border-left-color 100ms linear);
+
+  }
+  &:disabled {
+    .ngPagerFirstTriangle, .pager-first-triangle {
+      border-right-color: #ccc;
+    }
+    .ngPagerLastTriangle, .ngPagerLastBar, .ngPagerFirstBar, .pager-last-triangle, .pager-last-bar, .pager-first-bar {
+      border-left-color: #ccc;
+    }
+  }
+}
+
+.monthlyBilling .table-pager-info{
+  width:50%;
+}

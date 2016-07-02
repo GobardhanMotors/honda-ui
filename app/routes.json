@@ -1,0 +1,18 @@
+{
+    "/": {
+        "title": "Homepage",
+        "layout": "layouts/login",
+        "theme": "themes/default",
+        "sections": {
+            "main": "modules/layout"
+        }
+    },
+    "/next": {
+        "title": "next",
+        "layout": "layouts/login",
+        "theme": "themes/default",
+        "sections": {
+            "main": "modules/signin"
+        }
+    }
+}

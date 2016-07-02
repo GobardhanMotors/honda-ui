@@ -1,0 +1,174 @@
+﻿.create-assessment-date-time {}
+.drag-handle {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  display: block;
+}
+.summary-custom-questions {
+	width: 30px;
+	height: 30px;
+	margin-right: -55px;
+	margin-top: -23px;
+}
+.create-assessment-accordion {
+  input[type="radio"], input[type="checkbox"] {
+    margin-top: 0;
+  }
+  li {
+    position: relative;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .input-with-icon {
+    width: 60%;
+    float: left;
+    + button {
+      padding-left: 7px;
+      float: left;
+    }
+  }
+  .has-error .General-icon_info_6fa8dc_30x30 {
+    background-position: 0 -4519px;
+  }
+  .question-name {
+    padding-bottom: 20px;
+  }
+  .question-mandatory {
+    margin-bottom: 30px;
+    .radio-inline {
+      margin-left: 10px;
+    }
+  }
+  .answer-type {
+    select {
+      width: 40%;
+    }
+  }
+  .answer-list {
+    .answer-list-labels {
+      margin-bottom: 0;
+      label {
+        text-align: right;
+      }
+      .password-info-icon {
+        margin-top: -6px;
+        .General-icon_info_6fa8dc_30x30 {
+          background-size: 64px;
+          background-position: 0 -2991px;
+          width: 20px;
+          height: 20px;
+          .has-error & {
+            background-position: 0 -2991px;
+          }
+        }
+      }
+    }
+    .form-group {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+    .answer-list-column {
+      padding-left: 3px;
+      padding-right: 3px;
+      .help-block {
+        margin-right: -40px;
+      }
+    }
+  }
+  .answer-number {
+    margin-left: -10px;
+    float: left;
+    margin-top: 6px;
+  }
+  .displayed-answer-type {
+    float: none;
+    width: 83%;
+    margin-left: 19px;
+  }
+  .create-assessment-date-time {
+    .input-with-icon {
+      margin-right: 10px;
+    }
+    .custom-time-picker {
+      margin-top: -36px;
+    }
+  }
+  .button-bar {
+    position: absolute;
+    right: 13px;
+    top: 0;
+    > * {
+      display: inline-block;
+      vertical-align: middle;
+      padding-right: 5px;
+    }
+  }
+}
+
+
+// This rule effects the Missed Opportunity Report
+.assessment-table-col{
+	width: 250px;
+	word-break: break-word;
+}
+
+
+// This is basically the accordion reset back to normal.
+// This needs to be cleaned up.
+.view {
+	.assessment-accordion,
+	.create-assessment-accordion {
+		.panel-default {
+      color: #666666;
+      margin-bottom: 7px;
+  		> .panel-heading {
+  			background-color: transparent;
+        color: inherit;
+		  }
+		}
+		.expanded {
+  		&.panel-default > .panel-heading {
+    		border-bottom: 1px solid #DDD;
+  		}
+		}
+	}
+}
+
+// This might need to be moved to the placeholders scss
+%iui-description-field{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: inline-block;
+}
+
+
+
+
+
+// I think these rules effect alot more than just assessments
+.edit-resource-row {
+	td {
+		.text {
+			max-width:185px;
+			@extend %iui-description-field;
+		}
+		.description-text {
+			max-width:300px;
+			@extend %iui-description-field;
+		}
+	}
+}
+.population-definition-summary {
+	.summary-description {
+		@extend %iui-description-field;
+		max-width: 290px;
+	}
+}
+.summary-description {
+	overflow: hidden;
+	width: 650px;
+	text-overflow: ellipsis; 
+}

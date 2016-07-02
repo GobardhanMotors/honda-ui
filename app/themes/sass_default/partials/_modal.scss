@@ -1,0 +1,200 @@
+@import "compass/css3/transition";
+@import "compass/css3/box-shadow";
+$topStack : 50;
+html, body {
+  min-height: 100%;
+}
+body {
+  position: relative; /* needed if you position the pseudo-element absolutely */
+}
+
+body.dialogIsOpen{
+
+  &:after {
+    content: "";
+    display: block;
+    position: fixed; /* could also be absolute */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: $topStack - 1;
+    background-color: rgba(0,0,0,0.4);
+  }
+  .content-body > .main > div {
+    position : static;
+  }
+}
+.main { .med-modal {
+  background: white;
+  @include box-shadow();
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  // 60% width leaves 20% on the sides
+  overflow: auto;
+   /* Hidden */
+  opacity: 0;
+  pointer-events: none;
+  z-index : - 1;
+  @include single-transition(opacity, 400ms, ease-in);
+  .modal-title {
+    @extend .h2-style;
+    float: none;
+    margin-right: 0;
+    width: auto;
+  }
+  header{
+    border-bottom : 2px solid black;
+    height: 1.5em;
+    padding : 0;
+    h3{
+      @include span(11 of 12);
+      font-size: 1em;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .med-modal-close {
+      @extend %t-ultrastrong;
+      font-size: $medium-font-size;
+      display: inline-block;
+      text-align: right;
+      &:hover {
+        cursor : pointer;
+      }
+    }
+  }
+  footer {
+    @extend %center;
+    padding: 0 40% 1em;
+    border-bottom : 2px solid black;
+    margin-bottom: 1.5em;
+
+  }
+  &.calendar-modal {
+    top: 8%;
+    height:60%;
+  }
+  &.small-modal, &.modal-small {
+    width: 40%;
+    left: 30%;
+  }
+  &.modal-graph {
+    width: 80%;
+    left: 10%;
+    @include breakpoint (640px) {
+      width: 100%;
+      max-width: 480px;
+      margin-left: -240px;
+      left: 50%;
+    }
+  }
+}
+}
+.dialogIsOpen .med-modal.active {
+
+  /* Regular size and visible */
+  transform: scale(1); /* prefix me */
+  opacity: 1;
+  z-index: $topStack;
+  /* Clickable */
+  pointer-events: auto;
+
+}
+
+body.confirmdialogIsOpen:after {
+  content: "";
+  display: block;
+  position: fixed;
+  /* could also be absolute */
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 30 -1;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.confirm-modal {
+  background: white;
+  position: fixed;
+  width: 20%;
+  top: 50%;
+  left: 70%;
+  margin: -25% 0 0 -25%;
+  /* Hidden */
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  -moz-transition: opacity 400ms ease-in;
+  -o-transition: opacity 400ms ease-in;
+  -webkit-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+}
+
+.confirmdialogIsOpen .confirm-modal.active {
+  /* Regular size and visible */
+  transform: scale(1);
+  /* prefix me */
+  opacity: 1;
+  z-index: 50;
+  /* Clickable */
+  pointer-events: auto;
+}
+
+.modal {
+  z-index: 981;
+}
+
+.modal-backdrop {
+  z-index: 980;
+}
+.modal-title {
+  color: $sg_bashful_blue;
+  @extend .h2-style;
+  font-size: 1.4285714286em !important;
+  float: none;
+  margin-right: 0;
+  width: auto;
+}
+
+.modal-header-color{
+  color: #6fa8dc;
+}
+.close-popup {
+  @extend .no-btn;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  margin: 8px 5px 0px 0px;
+  outline: 0;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  &:focus{
+    box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #999;
+    outline: none;
+    @include border-radius(50%);
+  }
+
+}
+
+.modal-header {
+  border-bottom: none;
+}
+.modal-body {
+  @include clearfix();
+  padding-top: 0;
+  color: #666;
+  hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.modal-body .table-pager-buttons {
+  width: 50%;
+}
+
+

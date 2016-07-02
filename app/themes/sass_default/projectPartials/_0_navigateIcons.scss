@@ -1,0 +1,93 @@
+$medseek-navigate-icons : (
+add : "\e800",
+comment : "\e801",
+left_arrow : "\e802",
+right_arrow : "\e803",
+scale : "\e804",
+location : "\e805",
+admin_settings : "\e806",
+admission : "\e807",
+configuration : "\e808",
+content_summary : "\e809",
+lock : "\e80a",
+search : "\e80b",
+settings : "\e80c",
+martini : "\e80d",
+delete : "\e80e",
+allergies : "\e80f",
+back : "\e810",
+discharge : "\e811",
+message : "\e812",
+site_map : "\e813",
+stethescope : "\e814",
+move : "\e815",
+download : "\e816",
+bar_chart : "\e817",
+blood_drop : "\e818",
+duplicate_2 : "\e819",
+needle : "\e81a",
+system_admin : "\e81b",
+notifications : "\e81c",
+blood_glucose : "\e81d",
+tasks : "\e81e",
+blood_pressure : "\e81f",
+edit : "\e820",
+duplicate : "\e821",
+pdf : "\e822",
+team : "\e823",
+tools : "\e824",
+pharmacy : "\e825",
+elipses : "\e826",
+browse_desktop : "\e827",
+calendar : "\e828",
+email : "\e829",
+phone : "\e82a",
+user_female : "\e82b",
+user_male : "\e82c",
+physician : "\e82d",
+excel : "\e82e",
+check : "\e82f",
+chevron_down : "\e830",
+exclamation_mark : "\e831",
+pie_chart : "\e832",
+users : "\e833",
+vitals : "\e834",
+power : "\e835",
+exit : "\e836",
+chevron_left : "\e837",
+chevron_right : "\e838",
+eye : "\e839",
+print : "\e83a",
+question_mark : "\e83b",
+family : "\e83c",
+chevron_up : "\e83d",
+cholesterol : "\e83e",
+fast_foward : "\e83f",
+readmission : "\e840",
+refresh : "\e841",
+graph : "\e842",
+clear : "\e843",
+clinical_trial : "\e844",
+home : "\e845",
+report : "\e846",
+rewind : "\e847",
+info : "\e848",
+close : "\e849");
+
+@include font-face('navigateIconSet', font-files("navigateicons.woff","navigateicons.ttf","navigateicons.svg"));
+
+%navigateIcons:before, %navigateIcons:after {
+  @extend %medseekIcons;
+  font-family: 'navigateIconSet';
+}
+@mixin nav-icon-font($font-name, $font-size:1em, $color:inherit, $position:before) {
+  @if($position != before or $position != after ){
+    $position : before;
+  }
+  &:#{$position}{
+    @extend %navigateIcons;
+    content : '#{map-get($medseek-navigate-icons, $font-name)}';
+    font-size: $font-size;
+    color: $color;
+  }
+}

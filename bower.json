@@ -1,0 +1,28 @@
+{
+  "name": "honda-ui",
+  "description": "Honda Ui",
+  "main": "index.js",
+  "authors": [
+    "shubham chaturvedi <shubham1838@gmail.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "AngularJs",
+    "JavaScript"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/shubhamdev/Honda-ui",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "1.5.0",
+    "bootstrap": "3.3.6"
+  }
+}

@@ -1,0 +1,123 @@
+﻿.tooltip{
+  &.discharged,
+  &.addpatient,
+  &.readmission {
+    .tooltip-inner{
+      border-top-color: #e06666;
+      text-align: left;
+    }
+  }
+  &.taskstatus{
+     .tooltip-inner{
+      border-top-color: $sg_gamma_green;
+    }
+  }
+}
+.my-health-information-popup-header {
+    width: 100%;
+	border-bottom:0px;
+}
+.openConditionPopUp, .openManagedPopulationPopUp, .populations, .openLastVisitPopUp{
+	.my-health-information-popup-header{
+		padding-bottom:0px;
+	}
+}
+.my-health-information-popup-heading {
+    font-size: 18px;
+}
+
+
+.ico_icd_code {
+  background-image: url("../../themes/default/img/ico_cpt_code.png");
+  width: 30px;
+  height: 30px;
+  margin-top: -2px;
+}
+
+.ico_cpt_code {
+  background-image: url(../../themes/default/img/ico_icd_codes.png);
+  width: 30px;
+  height: 30px;
+  margin-top: -2px;
+}
+
+.ngGrid-height {
+  height: auto;
+}
+.grid-style .ngViewport{
+  height: auto;
+  max-height: 510px;
+}
+
+.excel-export-icon{
+	width: 24px;
+    height: 24px;
+    float: right;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    color: #FFF;
+    text-align: center;
+    font-size: 14px;
+    padding-top: 3px;
+	@extend .General-sprite;
+	background-position:-4px -7510px;
+    line-height: 18px;
+   cursor: pointer;
+}
+
+.modal-header.patient-search-condition .modal-close,
+.modal-header.patient-search-population .modal-close{
+  margin-top: -61px;
+}
+
+.modal-body.patient-search-population .multiSelect.filter-ctrl,
+.modal-body.patient-search-condition .multiSelect.filter-ctrl{
+  margin-left: 8%;
+}
+
+.modal-body.patient-search-population .control-label,
+.modal-body.patient-search-condition .control-label{
+  padding-left: 5px;
+  margin-bottom: 0px;
+  background:#999;
+  width: 79%;
+}
+
+.modal-body.patient-search-population .right-filter-ctrl,
+.modal-body.patient-search-population .left-filter-ctrl,
+.modal-body.patient-search-condition .right-filter-ctrl,
+.modal-body.patient-search-condition .left-filter-ctrl
+{
+  margin-top: 0px;
+}
+
+.patient-grid-modal{
+     width: 603px;
+	 border: 2px solid rgb(212,212,212);
+}
+.ngGrid.gridStyle {
+  width: 100%;
+  height:auto;
+}
+.close-font-size {
+        font-size:17px;
+        }
+.task-panel{
+  .admission-status{
+    > div{
+      @extend %icon-base;
+    }
+  }
+  .task-status {
+    padding : 0;
+  }
+}
+
+.margin-reset{
+	margin: 0 !important;
+}
+
+.my-patients-list-header{
+	margin: 4px 0;
+}

@@ -1,0 +1,61 @@
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+%hidden {
+  display : none !important;
+}
+
+%icons-com {
+    display: inline-block;
+    background-repeat: no-repeat;
+    min-height: 20px;
+    padding-left: 27px;
+}
+
+%grid-w-bdr {
+    border: 1px solid #ababab;
+    width: 100%;
+}
+
+%graph_com {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+%icons-com-r {
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    display: block;
+    float: right;
+    margin: 3px;
+}
+
+%grid-style-visit-c {
+    border: 1px solid #d4d4d4;
+    margin-bottom: 10px;
+    float: left;
+    height: 200px;
+}
+
+%ng-grid-sorting {
+  position: absolute;
+  top: 10px;
+  left: 75%;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  border-color: #CCC transparent;
+  border-style: solid;
+  height: 0;
+  width: 0;
+}

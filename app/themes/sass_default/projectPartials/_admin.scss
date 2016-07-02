@@ -1,0 +1,178 @@
+/* @import 'compass';
+@import 'susy';
+@import 'partials/_4_buttons';
+*/
+%admin-highlight{
+    color: #fff;
+    background-color: palette(blue);
+   }
+#admin_menu {
+  .users{
+   h2 {
+     @include nav-icon-font('users',1.25em);
+    }
+   }
+  .configuration{
+   h2 {
+     @include nav-icon-font('configuration',1.25em);
+    }
+   }
+  .library{
+   h2 {
+     //@include icon-font('docs',1.25em);
+     // This font is causing issues - switching to an image instead
+     padding-left: 2.25em;
+     position: relative;
+     &:before {
+      content: " ";
+      position: absolute;
+      margin-left: 0;
+      left: 0.7em;
+      top: 0.65em;
+      width: 1.25em;
+      height: 1.25em;
+      display: inline-block;
+      background: url('/themes/default/img/ico_library.png') no-repeat;
+      background-size: contain;
+     }
+    }
+   }
+  .system{
+   h2 {
+     @include nav-icon-font('system_admin',1.25em);
+    }
+   }
+   .reports{
+   h2 {
+     @include nav-icon-font('bar_chart',1.25em);
+    }
+   }
+  .advanced{
+   h2 {
+     @include nav-icon-font('graph',1.25em);
+    }
+   }
+  h2 {
+    font-weight: 400;
+    font-size: 1em;
+    margin: 0;
+    padding: .75em .5em .25em;
+    &:before{
+      margin-left: .5em;
+    }
+  }
+  section{
+    padding-bottom : 5px;
+    border-bottom: none;
+    min-height : 2.5em;
+    height :auto;
+    > div {
+      position: relative;
+    }
+  }
+  > ul {
+  padding: 20px 0;
+   > li{
+     margin-top: 5px;
+   }
+  }
+}
+.admin-menu-wrapper {
+  position: relative;
+  .pointer-right{
+      position: absolute;
+      top: 50%;
+      left: -12px;
+      width: 14px;
+      z-index: 10;
+      border : solid transparent 1px;
+    }
+
+}
+.admin-menu {
+position: relative;
+ // Hiding for Navigate 3.0 until Metrics & Task Bundles can be brought into the admin module
+ // .highlight{
+ // 	 @extend %admin-highlight;
+ //   }
+
+ h2 {
+ 	 padding: .75em .25em;
+   font-size: 1em;
+   @include span(75% no-gutters);
+   float : left;
+
+ }
+ ul{
+   padding: 0;
+ }
+ button{
+ 	padding-top: .75em;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  min-width: 40px;
+  border: none;
+  background-color: transparent;
+  position:relative;
+  >span{
+  	@include circleText(30px, #fff);
+    >span{
+   // @include icon-font("circle-empty", 30px);
+    @include icon-font("dot-3", 10px);
+      margin: 5px -7px;
+    }
+  }
+
+ }
+ .popover{
+   width : 15em;
+   .popover-inner{
+     margin: .5em;
+   }
+   li{
+     margin-bottom : .5em;
+     &:hover,&:focus{
+       @extend %admin-highlight;
+       a{
+         &:hover,&:focus{
+         	@extend %admin-highlight;
+         }
+       }
+     }
+   }
+ }
+ .popout {
+  position: absolute;
+  left: 102%;
+  top: 2em;
+  border: 1px solid;
+  width: 200px;
+  background-color: white;
+  a {
+  	 @include contrasted(#fff);
+  	}
+  }
+}
+.admin-menu .popover.open{
+  display: block;
+  left:90%;
+  visibility : hidden;
+  a {
+  	 width: 100%;
+     display: inline-block;
+     @include contrasted(#fff);
+    }
+
+}
+.care-team-details{
+  table {
+    margin-bottom: 1em;
+  }
+}
+.care-team-action-icons{
+    width: 100px;
+    text-align: center;
+    padding-right: 0;
+    padding-left: 0;
+}

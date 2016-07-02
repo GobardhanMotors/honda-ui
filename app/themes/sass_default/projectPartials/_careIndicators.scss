@@ -1,0 +1,23 @@
+.care-indicators {
+  tr {
+    vertical-align: top;
+    td, th {
+      padding: 6px 10px;
+    }
+  }
+  ul {
+    margin-bottom: 0;
+  }
+  .ci-category {
+    width: 20%;
+  }
+  .ci-description {
+    width: 35%;
+  }
+  .ci-updated {
+    width: 35%;
+  }
+  .ci-actions {
+    width: 10%;
+  }
+}

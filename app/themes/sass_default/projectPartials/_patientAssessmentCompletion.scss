@@ -1,0 +1,25 @@
+.modal.saveConfirm {
+  z-index:982;
+}
+.modal.completeConfirm {
+  z-index:983;
+}
+.modal.cancelConfirm {
+  z-index:984;
+}
+.openTaskPopUp{
+	.global-health-scale{
+		.radio-inline{
+			margin:0 10px 0 0;
+		}
+	}
+}
+.left-right-trim{
+	margin:0 15px;
+}
+#assessmentSurveyDiv form {
+  page-break-inside: avoid;
+}
+.assessment-invalid-time{
+	color:#E06666;
+}

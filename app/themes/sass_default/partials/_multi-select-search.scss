@@ -1,0 +1,125 @@
+// Multi-Select Search
+$mslPad1 : 40px;
+.multi-select-search {
+	padding-right: $mslPad1 ;
+	position: relative;
+}
+
+.multiselect-wrapper-search-in {
+  z-index: $multiSelect-z-index;
+  position: absolute;
+  right: $mslPad1 ;
+  left: 0;
+}
+
+.search-in-ctrl {
+  max-height: 200px;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+  background-color: #FFF;
+  border: 1px solid $sg_light_highlight;
+  border-top: none;
+  @include border-bottom-right-radius(4px);
+  @include border-bottom-left-radius(4px);
+  > ul {
+  	@extend .list-unstyled;
+
+  	> li {
+  		display: block;
+  		.checkbox {
+  			padding: 10px;
+  			margin: 0;
+  		}
+  	}
+  }
+}
+
+.mul-select-search {
+  min-width: 10px;
+  height: 30px;
+}
+
+.mul-select-search-add {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+
+// Multi-select slim 
+
+.i-multi-select-slim {
+  position: relative;
+  max-width: 100%;
+}
+
+.i-multi-select-slim-btn {
+  @extend .btn-primary;
+  position: relative;
+  min-width: 100%;
+  text-align: left;
+  border: none;
+  height: 30px;
+  &.dropdown-active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  > .caret {
+    position: absolute;
+    right: 10px;
+    top: 45%;
+  }
+}
+
+.i-multi-select-slim-dropdown-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.i-multi-select-slim-dropdown {
+  @extend .list-unstyled;
+  min-width: 100%;
+  position: absolute;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-top: none;
+  overflow-y: auto;
+  max-height: 200px;
+  &.with-search {
+    top: 43px;
+  }
+  > li {
+    border-bottom: 1px solid #ccc;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  .selected {
+    background-color: palette(blue,light);
+  }
+  .disabled {
+    color: #999;
+  }
+  .checkbox {
+    margin: 0;
+    margin-left: 0.5em;
+    label {
+      line-height: 1.61803398875;
+      display: block;
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+    }
+  }
+}
+.i-multi-select-slim-filter {
+  position: absolute;
+  top: 0;
+  padding: 0.5em;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  min-width: 100%;
+  .input-group-btn > .btn {
+    line-height: 1;
+  }
+}

@@ -1,0 +1,24 @@
+//This file is used when sending creating PDFs for the sole purpose of sending to EMRs via Communicate.
+//This file should NEVER contain actual styles. Only put @import statements in here.
+
+@import "compass";
+@import "susy";
+@import "breakpoint";
+@import "bootstrapOverrides";
+@import "bootstrap";
+@import "extends";
+@import "mixins";
+@import "variables";
+@import "partials/0_z-index";
+@import "partials/0.layout";
+@import "partials/0.utils";
+@import "partials/2_color";
+@import "partials/2_typography";
+@import "partials/4_buttons";
+@import "partials/4_forms";
+@import "partials/iconfont";
+@import "partials/date-time-picker";
+@import "projectPartials/0_navigateIcons";
+@import "projectPartials/1_placeholders";
+@import "projectPartials/patientAssessmentCompletion";
+@import "projectPartials/zzz_main_extension";

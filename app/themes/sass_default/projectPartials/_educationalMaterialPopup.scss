@@ -1,0 +1,57 @@
+.add-education-material-popup{
+	width:650px;
+
+	.required-error{
+		margin-left: 2px;
+		color: #e06666;
+	}
+	.add-delete-icons{
+		margin-top:3px;
+	}
+	.add-edu-frm-ctrl.due-date-holder{
+		margin-bottom:15px;
+	}
+	.add-edu-frm-ctrl label{
+		padding-top:0px;
+	}
+	.error-message-holder{
+		.validation{
+			width: auto;
+			text-align: left;
+			margin: auto;
+			display: block;
+		}
+	}
+	.education-grid-modal{
+	    width: 100%;
+        border: 2px solid #d4d4d4;
+    }
+	.ngViewport{
+		text-align:left;
+	}
+	.ng-valid-date:focus{
+		border-color:#6aa84f;
+	}
+	.action-icons-holder span{
+		float:left;
+		display:block;
+	}
+	.export-to-pdf,
+	.view-icon {
+		width: 30px;
+		height: 30px;
+		float: left;
+		-moz-border-radius: 50%;
+		-webkit-border-radius: 50%;
+		border-radius: 50%;
+		cursor: pointer;
+		margin:-2px 4px 0 0;
+	}
+	.view-icon{
+		background-color:#6FA8DC;
+		background-position:center;
+	}
+	.export-to-pdf{
+		@extend .General-icon_download_6aa84f_30x30;
+	}
+}

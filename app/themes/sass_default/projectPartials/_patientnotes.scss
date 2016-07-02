@@ -1,0 +1,155 @@
+.taskSummary{
+  text-align: center;
+  margin-top: 7px;
+}
+.btnSaveNotes, .gridPatientTask{
+  margin-top: 5px;
+}
+.modal-content ul{
+  width: 100%;
+  list-style-type: none;
+}
+.modal-content ul li {
+  display: inline-block;
+  width: 100%;
+}
+.modal-content ul li span{
+  float: left;
+  width: 25%;
+  text-align: left;
+  margin-top:15px;
+}
+.modal-content ul li div.summaryDetail{
+  float: left;
+  width: 50%;
+  text-align: left;
+  margin-top:15px;
+}
+.alert-msg-styling{
+	.alert-success{
+		background: #E1EDDB;
+		border: 1px solid #6AA84F;
+		border-radius: 3px;
+		color: #6AAF84;
+	}
+	.alert-error{
+		background: #F8E0E0;
+		border: 1px solid #E06666;
+		border-radius: 3px;
+		color: #E06666;
+	}
+	.alert-info{
+		background: #E2EDF8;
+		border: 1px solid #6FA8DC;
+		border-radius: 3px;
+		color: #6FA8DC;
+	}
+}
+.view-icon {
+	  background-image: url(../../themes/default/img/ico_view.png);
+	  min-width: 30px;
+	  height: 30px;
+	  margin-top: -2px;
+	  margin-left: 19px;
+	  display: block;
+	  cursor: pointer;
+	  border-radius: 55%;
+	  background-repeat: no-repeat;
+	  float: left;
+	  background-color:#6FA8DC;
+	 background-position:center;
+}
+
+.nggrid.patient-notes-grid .ngViewport{
+  height : auto !important;
+}
+
+.patient-documents section .section-body {
+  @include clearfix;
+}
+
+.patient-documents a.btn {
+  margin-bottom: 10px;
+}
+
+/*  Grid Last item bottom border */
+.ngCanvas .ngRow:last-child {
+	.ngCell,
+	.ngCellText{
+		border-bottom:1px solid #CCC;
+	}
+}
+.gridPatientTask {
+	.nggrid {
+		height:auto;
+	}
+}
+.custom-margin{
+  margin-top: 3%;
+}
+.patient-notes-print  {
+	position: absolute;
+	right: 75px;
+	top: 18px;
+}
+.notes-tabledata-print {
+	background: #000;
+}
+.notes-tabledata-print tr {
+	padding-top: 15px;
+}
+.notes-tabledata-print tr th{
+	text-align: left;
+}
+.notes-headerdata-print tr {
+	padding-top: 5px;
+}
+.notes-headerdata-print tr th{
+	text-align: right;
+}
+.notes-headerdata-print tr td{
+	text-align: left;
+	width: 200px;
+}
+
+@media print {
+   p {color:red;}
+}
+.sharebar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 195;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.note-full {
+  display: inline-block;
+  width: 50%;
+  &.note-truncated {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+.note-cutline {
+  @extend .pull-right;
+  @extend .text-right;
+  @extend .list-unstyled;
+  width: 50%;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
+  margin-bottom: 0;
+  li {
+    margin-top: 8px;
+  }
+  li:first-child {
+    margin-top: 0;
+  }
+}
+.expanded del {
+  text-decoration: none;
+}

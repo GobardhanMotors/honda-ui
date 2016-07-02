@@ -1,0 +1,209 @@
+accordion{
+  h4.panel-title{
+    font-weight: 400;
+  }
+}
+/* task list - Missed Opertunity*/
+.accordion-section {
+  width: 100%;
+}
+
+.accordion-expandable-row {
+  cursor: pointer;
+  background-color: #ddd;
+  border:1px solid;
+  height: 24px;
+  margin:2px;
+  line-height: 23px;
+}
+
+.accordion-expandable-row:hover {
+  background-color: #E2F4FF;
+}
+
+.accordion-data-panel {
+  border:1px solid;
+  height:192px;
+  width: 99.6%;
+  margin:0% .2% 0% .2%;
+  overflow:auto;
+}
+.accordion-height-fix {
+  min-height: 235px;
+  max-height: auto;
+  overflow-y: visible;
+}
+
+.color-red
+{
+    color: #cc0000;
+}
+
+.color-green
+{
+    color: #6aa84f;
+}
+
+.color-blue
+{
+    color: #6fa8dc;
+    font-size: inherit;
+}
+
+.color-yellow
+{
+    color: #f1c232;
+}
+
+.color-light-red
+{
+    color: #ea9999;
+}
+
+.color-white
+{
+    color: #FFFFFF;
+}
+
+.flag-img{
+  border: 1px solid;
+  border-color: #000000;
+  height: 20px;
+  width: 20px;
+}
+
+.background-red{
+  background-color: #cc0000;
+}
+
+.background-blue{
+  background-color: #6fa8dc;
+}
+
+.background-green{
+  background-color: #6aa84f;
+}
+
+.background-yellow{
+  background-color: #f1c232;
+}
+
+.background-light-red{
+  background-color: #ea9999;
+}
+
+.accordion-arrow-img{
+ color: #000000;
+ padding-right:10px;
+ margin: 4px 0 0 5px ;
+}
+
+.accordion-buttons-margin{
+ margin-left: 25px;
+ margin-right: 25px;
+}
+
+.accordion-panel-body-reset
+{
+    padding: 0;
+}
+
+.accordion-margin-top
+{
+    margin-top: 5px;
+}
+
+.accordion-padding-reset
+{
+    padding: 0;
+}
+
+.accordion-item
+{
+    width: 100%;
+    height: auto;
+    float: left;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.accordion-item-button {
+   height: 22px;
+}
+
+.alert-error {
+  background-color: #ea9999;
+  border-color: #cc0000;
+  color: #cc0000;
+}
+
+.accordion-item-heading {
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+
+//according-heading rendered as accordion-toggle
+.accordion-toggle {
+  cursor: pointer;
+  .glyphicon{
+    margin-right: .25em;
+    display: inline-block;
+  }
+
+}
+
+.task-panel {
+  width: 100%;
+  display: inline-block;
+  margin: 4px 0;
+  border-bottom: 1px solid #ccc;
+  min-height: 44px;
+}
+
+.tasks-block-container {
+  margin-top: 10px;
+}
+
+%icon-alpha {
+  min-width: 30px;
+  height: 30px;
+  margin-top: -2px;
+  display:block;
+  cursor:pointer;
+}
+.admit-icon {
+  @extend %icon-alpha;
+  background: url(../../themes/default/img/icon_add_patients.png) no-repeat;
+}
+.discharge-icon {
+  @extend %icon-alpha;
+  background: url(../../themes/default/img/icon_remove_patients.png) no-repeat;
+}
+.readmission-icon {
+  @extend %icon-alpha;
+  background: url(../../themes/default/img/icon_readmission_patients.png) no-repeat;
+}
+.panel-default{
+  @include transition(background-color 100ms linear);
+  background-color: #f5f5f5;
+  > .panel-heading {
+    @include transition(color 100ms linear);
+    background: none;
+  }
+  &.expanded, &:hover, &:focus {
+    > .panel-heading{
+      color : palette(blue);
+    }
+   &.expanded{
+     background-color: white;
+     > .panel-heading{
+       border-bottom: none;
+     }
+   }
+  }
+  //overide BOOTSTRAP
+  .panel-heading + .panel-collapse .panel-body{
+    border-top-style: none ;
+  }
+}

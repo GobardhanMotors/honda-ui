@@ -1,0 +1,89 @@
+.careplan {
+  .checkbox.row {
+    margin-left: 0;
+    margin-bottom: 5px;
+    color: $sg_light_highlight;
+    input,
+    textarea {
+      opacity: .75;
+    }
+    &.included {
+      color: $base-font-color;
+      input,
+      textarea {
+        opacity: 1;
+      }
+    }
+    &.single-line {
+      $single-checkbox-row-height: 29px;
+      line-height: $single-checkbox-row-height;
+      label {
+        line-height: $single-checkbox-row-height;
+      }
+      input[type="checkbox"] {
+        margin-top: 7px;
+      }
+    }
+    .date-picker-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .custom-time-picker {
+      margin-top: -35px;
+    }
+  }
+  .main-header {
+    .page-header {
+      width: auto;
+    }
+    .button-bar {
+      margin-top: 0;
+    }
+    .page-description {
+      margin-top: 20px;
+      max-width: 720px;
+    }
+  }
+  .page-subheader {
+    margin-top: 50px;
+  }
+}
+.action-anchor-padding {
+  padding-right:10px;
+}
+.checkbox-table-header {
+  font-weight: bold;
+  margin-left: 0;
+  *:first-child {
+    padding-left: 20px;
+  }
+}
+.button-bar-bottom {
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+@media print {
+  .print-clear {
+    clear: both;
+  }
+  .xlarge-list {
+    dt.print-label {
+      float: left;
+      width: 30%;
+    }
+    dd.print-value {
+      float: left;
+      margin-left: 0;
+      width: 70%;
+    }
+  }
+  .checkbox-table-header {
+    .col-xs-3 {
+      padding-left: 0px;
+    }
+    .col-xs-4 {
+      padding-left: 0px;
+    }
+  }
+}

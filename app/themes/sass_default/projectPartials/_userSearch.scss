@@ -1,0 +1,141 @@
+
+.user-search-container {
+  @include span(10 of 12);
+  position: relative;
+  margin-top: 2em;
+  margin-right: 0;
+  .user-search-input, {
+    width: 70%;
+    margin-top: -3px;
+  }
+  .user-search-radio {
+    height: 14px;
+    margin-top: 1px;
+    margin-right: 7px;
+  }
+  .user-radio-label {
+    width: 90px;
+  }
+  .user-search-radio {
+    width: 14px;
+    float: left;
+  }
+  .user-search-right {
+    float: right;
+    width: 50%;
+  }
+  .user-search-left {
+    @include span(6 of 12);
+  }
+  .user-search-right {
+    @include span(6 of 12 last);
+  }
+  .user-search-label {
+    width: 90px;
+  }
+}
+
+.user-mgmt-accordion.panel-body {
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-bottom: -28px;
+}
+
+.user-search-title {
+  margin-bottom: 2em;
+}
+
+.user-search-left {
+  width: 40%;
+  float: left;
+}
+
+.user-search-right {
+  width: 40%;
+  float: right;
+}
+
+.user-search-left, .user-search-right {
+  .user-search-input {
+    width: 65%;
+  }
+  label {
+    display: block;
+    float: left;
+    width: 100px;
+    text-align: right;
+    margin-right: 1em;
+    margin-top: 8px;
+  }
+}
+
+.user-mgmt-radios {
+  margin-bottom: 5em;
+  input {
+    overflow: hidden;
+    vertical-align: bottom;
+    position: relative;
+    height: 15px;
+    width: 15px;
+  }
+  padding-top: 0.5em;
+  label:first-child {
+    margin-right: 3em;
+  }
+  label {
+    margin-top: -2px;
+    width: 67px;
+    margin-left: -0.5em;
+    input {
+      margin-right: 5px;
+    }
+  }
+}
+
+.search-form-btns {
+  margin-top: -3em;
+  float: right;
+  span {
+    width: 9em;
+    margin-bottom: -23px;
+    p {
+      float: right;
+      margin-top: 0.5em;
+    }
+  }
+}
+
+.add-export-users {
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+
+#users-table {
+  width: 100%;
+  .user-search-roles{
+    > li {
+    	list-style: circle inside;
+      margin-left: -39px;
+     margin-bottom: 3px;
+    }
+  }
+   td:last-child{
+    ul{
+    @include no-bullets;
+    @include horizontal-list;
+    min-width : 75px;
+    }
+  }
+  .trash-user{
+   .round-icon{
+    @include med-round-icon(#333, 32px);
+  }
+  }
+  .edit  {
+    .round-icon{
+    @include med-round-icon(#f90, 30px);
+    width: auto;
+    height: auto;
+  }
+  }
+}

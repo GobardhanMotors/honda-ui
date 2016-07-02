@@ -1,0 +1,47 @@
+// Tabs
+
+.nav-tabs {
+	-webkit-margin-after: 0em;
+	>li {
+		margin-top: 4px;
+		>a {
+			font-weight: bold;
+			cursor: pointer;
+			background-color: #fcfcfc;
+			border: 1px solid #ddd;
+			border-top-color: transparent;
+			box-shadow: 0 -4px 0 0 #999;
+			color: #666;
+			margin-right: 4px;
+			@include transition(background-color 100ms linear, box-shadow 100ms linear, color 100ms linear);
+			border-radius: 0 0 0 0;
+			&:hover {
+				color: #666;
+				box-shadow: 0 -4px 0 0 #6fa8dd;
+				border: 1px solid #ddd;
+				border-top-color: transparent;
+				background-color: #E2F4FC;
+			}
+
+		} // END a
+		&.active>a, &.active>a:hover, &.active>a:focus {
+			color: #666;
+			box-shadow: 0 -4px 0 0 #6fa8dd;
+			border-bottom-color: transparent;
+			background-color: #FFF;
+		}
+
+	}
+}
+
+.tab-content {
+	background-color: #FFF;
+	padding-bottom: 1.5em;
+	padding-right: 1em;
+	padding-left: 1em;
+	padding-top: 1em;
+	border-bottom: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+
+}

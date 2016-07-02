@@ -1,0 +1,68 @@
+{
+  "name": "honda-ui",
+  "version": "1.0.0",
+  "uiVersion": "1.0.0",
+  "description": "Honda UI",
+  "author": "shubham1838@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "bower": "^1.7.9",
+    "bower-requirejs": "^1.2.0"
+  },
+  "devDependencies": {
+    "async": "~0.7.0",
+    "grunt": "~0.4.4",
+    "grunt-available-tasks": "~0.4.3",
+    "grunt-bower-concat": "~0.2.4",
+    "grunt-cli": "~0.1.13",
+    "grunt-concurrent": "~0.5.0",
+    "grunt-contrib-compass": "~0.7.2",
+    "grunt-contrib-compass-sourcemap": "0.0.1",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-htmlmin": "^1.4.0",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-jasmine": "~0.6.3",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-watch": "~0.6.1",
+	"grunt-contrib-requirejs":"~1.0.0",
+    "grunt-express-server": "~0.4.13",
+    "grunt-githooks": "~0.3.1",
+    "grunt-html-angular-validate": "~0.2.3",
+    "grunt-karma": "~0.8.2",
+    "grunt-newer": "~0.7.0",
+    "grunt-shell": "~0.7.0",
+    "grunt-usemin": "~2.1.0",
+    "http-server": "~0.9.0",
+    "requirejs": "~2.1.22",
+    "karma": "~0.12.1",
+    "karma-chrome-launcher": "~0.1.2",
+    "karma-coverage": "~0.2.1",
+    "karma-firefox-launcher": "~0.1.3",
+    "karma-growl-reporter": "~0.1.1",
+    "karma-html-reporter": "~0.2.3",
+    "karma-jasmine": "~0.2.2",
+    "karma-junit-reporter": "~0.2.2",
+    "karma-ng-html2js-preprocessor": "~0.1.0",
+    "karma-phantomjs-launcher": "~0.1.2",
+    "karma-spec-reporter": "0.0.12",
+    "karma-requirejs":"~1.0.0",
+    "karma-browserify":"~5.0.5",
+    "load-grunt-tasks": "~0.4.0",
+    "socket.io": "^1.4.6"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shubhamdev/Honda-ui"
+  },
+  "engines": {
+    "node": ">=0.10.21"
+  },
+  "scripts": {
+    "test": "grunt karma:unit"
+  }
+}

@@ -1,0 +1,821 @@
+.list-builder{
+  li {
+    list-style-type : none
+  }
+}
+
+// BEGIN New Wizard Styles
+
+$background-gray: #999;
+$disable-silver: #ccc;
+
+ol.list-summary {
+    @extend .number;
+    > li.success:before {
+      color: $sg_gamma_green;
+      border-color: $sg_gamma_green;
+    }
+    > li:not(:last-child) {
+        border-bottom: 1px solid $disable-silver;
+        padding-bottom: 1em;
+    }
+    header.summary-header {
+        @extend .clearfix;
+        width: 100%;
+        float: none;
+        margin-left: 0;
+        margin-right: 0;
+        padding-top: 0;
+    }
+    h3 {
+        margin-top: 0.2em;
+    }
+    ol.list-summary-substeps {
+        list-style-type: none;
+        padding-left: 0;
+        > li:not(:last-child) {
+            border-bottom: 1px solid $disable-silver;
+        }
+        >li {
+            padding: 1em 0;
+        }
+    }
+}
+
+.page-menu-header {
+    @extend .clearfix;
+    border-bottom: 4px solid $sg_bashful_blue;
+    margin-bottom: 4px;
+    h1 {
+        @extend .h1-style;
+        @extend .page-header;
+        margin: 0 0 10px;
+    }
+}
+
+ol.page-menu {
+    list-style-type: none;
+    counter-reset: li;
+    // Step number
+    > li:before {
+        z-index: 1;
+        color: white;
+        position: absolute;
+        left: 0.25em;
+        top: 0.45em;
+        font-size: 2.25em;
+        display: block;
+        content:counter(li); /* set its content to CSS generated counter, using the "li" counter defined above */
+        //content:counter(li, lower-alpha); for letters
+        counter-increment:li; /* increment the li counter each time, assumed starting index is 0 */
+    }
+    > li > a {
+        padding-left: 2em;
+    }
+}
+
+.page-menu {
+    @include span(100% no-gutters);
+    padding: 0;
+    margin: 0;
+    > li {
+        display: inline-block;
+        float: left;
+        position: relative;
+        padding: 0;
+        margin: 0;
+
+        background-color: $background-gray;
+        @include single-transition(background-color, 200ms, linear, 0);
+        border-bottom: 2px solid white;
+        &:hover {
+            background-color: lighten($background-gray, 5%);
+        }
+        &.success {
+            background-color: $sg_gamma_green;
+            &:hover {
+                background-color: lighten($sg_gamma_green, 5%);
+            }
+            &:not(.active) {
+                // When a step is active, it does not show as a success
+                > a {
+                    // Making room for the checkmark
+                    padding-right: 1.5em;
+                }
+                .checkmark {
+                    top: 0.85em;
+                }
+            }
+        }
+        &.active {
+            .background {
+                top: 0;
+            }
+        }
+        &:last-child {
+         > a {
+            border-right: none;
+         }
+         .background {
+            right: 0;
+         }
+        }
+        > a {
+            border-right: 2px solid white;
+            display: block;
+            position: relative;
+            font-size: 1.25em;
+            text-decoration: none;
+            padding: 0.8em;
+            width: auto;
+            color: white;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .checkmark {
+            position: absolute;
+            right: 0.75em;
+            // The extra 5% handles the space for the bottom border
+            top: 105%;
+            // older webkits have trouble with the latest spec for cubic-bezier. This next line is for them
+            -webkit-transition: top 500ms cubic-bezier(0.730, 0, 0.240, 1);
+            -webkit-transition: top 500ms cubic-bezier(0.730, -0.300, 0.240, 1.280);
+            -moz-transition: top 500ms cubic-bezier(0.730, -0.300, 0.240, 1.280);
+            -o-transition: top 500ms cubic-bezier(0.730, -0.300, 0.240, 1.280);
+            transition: top 500ms cubic-bezier(0.730, -0.300, 0.240, 1.280);
+        }
+        .background {
+            position: absolute;
+            left: 0;
+            // to make space for the border
+            right: 2px;
+            // The extra 5% handles the space for the bottom border
+            top: 105%;
+            height: 105%;
+            background-color: $sg_bashful_blue;
+            @include single-transition(top, 500ms, ease-in-out, 0);
+        }
+    }
+}
+
+.wizard-nav {
+    // reset nav
+    width: auto;
+    min-height: 0;
+    background: none;
+    color: inherit;
+    display: block;
+}
+
+
+
+.major-steps {
+    padding: 0 30px;
+    position: relative;
+    overflow: hidden;
+    .wizard-arrow {
+        @extend .btn-primary;
+        min-width: 0;
+        position: absolute;
+        top: 0;
+        width: 30px;
+        height: 100%;
+        font-size: 1.25em;
+        border: none;
+        border-bottom: 2px solid white !important;
+        &:disabled {
+            color: $disable-silver;
+            background-color: $background-gray;
+            &:hover {
+                background-color: $background-gray;
+            }
+        }
+    }
+    .previous {
+        left: 0;
+        border-right: 2px solid white !important;
+    }
+    .next {
+        right: 0;
+        border-left: 2px solid white !important;
+    }
+}
+
+ol.page-sidebar-menu {
+    list-style-type: none;
+    counter-reset: li;
+    > li:before {
+        color: white;
+        position: absolute;
+        left: 0.5em;
+        top: 0.5em;
+        font-size: 1.5em;
+        display: block;
+        content:counter(li, lower-alpha);
+        counter-increment:li; /* increment the li counter each time, assumed starting index is 0 */
+    }
+    > li > a {
+        padding-left: 2.25em;
+    }
+}
+
+.minor-steps {
+    padding-right: 4px;
+}
+
+.page-sidebar-menu {
+    position: relative;
+    display: block;
+    clear: both;
+    @include span(100% no-gutters);
+    padding: 35px 0 0 0;
+    margin: 0;
+    // Gray area sitting on top of sidebar menu
+    &:before {
+        display: block;
+        content: ' ';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 35px;
+        background-color: $disable-silver;
+        width: 100%;
+    }
+    > li {
+        display: block;
+        position: relative;
+        margin-top: 4px;
+        background-color: $background-gray;
+        @include single-transition(background-color, 200ms, linear, 0);
+        &:hover {
+            background-color: lighten($background-gray, 5%);
+        }
+        &.success {
+            background-color: $sg_gamma_green;
+            &:not(.active):hover {
+                background-color: lighten($sg_gamma_green, 5%);
+            }
+            &:not(.active) {
+                // When a step is active, it does not show as a success
+                > a {
+                    // Making room for the checkmark
+                    padding-right: 2.25em;
+                }
+                .checkmark {
+                    top: 0.6em;
+                }
+            }
+        }
+        &.active {
+            background-color: white;
+            &:before {
+                color: $sg_bashful_blue;
+            }
+            > a {
+                color: $sg_bashful_blue;
+                border: 1px solid $sg_bashful_blue;
+                border-right: none;
+            }
+            // For the part that extends into the view
+            &:after {
+                position: absolute;
+                content: ' ';
+                background-color: white;
+                border: 1px solid $sg_bashful_blue;
+                border-right: none;
+                border-left: none;
+                width: 5px;
+                right: -5px;
+                top: 0;
+                bottom: 0;
+                z-index: 1;
+            }
+        }
+        > a {
+            text-decoration: none;
+            position: relative;
+            display: block;
+            padding: 0.8em;
+            color: white;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .checkmark {
+            position: absolute;
+            right: 0.75em;
+            // The extra 5% handles the space for the bottom border
+            top: 105%;
+            // older webkits have trouble with the latest spec for cubic-bezier. This next line is for them
+            -webkit-transition: top 500ms cubic-bezier(0.730, 0, 0.240, 1);
+            -webkit-transition: top 500ms cubic-bezier(0.730, -0.300, 0.240, 1.280);
+            -moz-transition: top 500ms cubic-bezier(0.730, -0.300, 0.240, 1.280);
+            -o-transition: top 500ms cubic-bezier(0.730, -0.300, 0.240, 1.280);
+            transition: top 500ms cubic-bezier(0.730, -0.300, 0.240, 1.280);
+        }
+    }
+}
+
+.wizard-sidebar {
+    width: 25%;
+    float: left;
+}
+section.main .wizard header {
+  float: none;
+}
+.wizard {
+    .wizard-title {
+        @extend .h2-style;
+        color: $sg_bashful_blue;
+        margin-top: 0;
+    }
+    .wizard-view {
+        position: relative;
+        &:not(.expanded) {
+            float: right;
+            width: 75%;
+        }
+        padding: 1em;
+        min-height: 30em;
+        border: 1px solid $sg_bashful_blue;
+        h2 {
+            width: auto;
+            float: none;
+            margin-right: 0;
+        }
+        
+        .wizard-button {
+            padding-top: 0;
+            padding-right: 0;
+        }
+    }
+    .wizard-button-bar {
+        text-align: right;
+    }
+
+    .alert-cancel {
+        @extend .well;
+        margin-top: 1em;
+        h2 {
+            @extend .h2-style;
+            margin-top: 0;
+            text-transform: initial;
+            text-align: center;
+
+        }
+        .alert-decision {
+            text-align: center;
+            .btn {
+                min-width: 8em;
+            }
+        }
+    }
+}
+
+
+// END New Wizard Styles
+
+.wizard
+{
+#lb-top-row div, #lb-top-row div a {
+    color: #FFF;
+}
+
+.lb-button-list.cancelButtonBar {
+    width:170px;
+     margin:0 auto;
+}
+.lb-button-list.pull-right.wizardButtonBar{
+    margin-top:10px;
+}
+.well .cancelAlert{
+    margin-top:55px;
+}
+.lb-arrow-wrap-top {
+    background-color: #526e83;
+    height: 40px;
+
+    text-align:center;
+    border-bottom: 2px solid #FFF;
+    float: left;
+    vertical-align: middle;
+}
+
+.lb-arrow-wrap-top.left {
+    border-right: 2px solid #FFF;
+    @include span(first 3% no-gutters);
+}
+
+.lb-arrow-wrap-top.right {
+    border-left: 2px solid #FFF;
+    @include span(last 3% no-gutters);
+}
+
+.lb-arrow-wrap-top.inactive {
+    background-color: $background-gray;
+}
+
+.lb-arrow-wrap-top span.glyphicon {
+    color:white;
+    line-height: 36px;
+    vertical-align:middle;
+    font-size: 18px;
+}
+
+#lb-body-row .body-wrap {
+    border-top: 4px solid #6fa8dd;
+    padding-top: 5px;
+    margin-bottom: 20px;
+}
+
+.lb-top-cell {
+    float: left;
+    height: 40px;
+    border-bottom: 2px solid #FFF;
+    background-color: $background-gray;
+    vertical-align: middle;
+    padding: 1px 5px;
+    line-height: 20px;
+    display:table;
+    border-right: 2px solid #FFF;
+}
+
+.lb-top-cell.last {
+    border-right: none;
+}
+
+.lb-top-cell.active {
+    background-color: #6fa8dd;
+    border-bottom: 2px solid #6fa8dd;
+}
+
+.lb-top-cell.success {
+    background-color: #6AA84F;
+}
+
+.lb-top-checkmark {
+        float: right;
+        margin-top: -2px;
+}
+
+.lb-top-checkmark-first {
+        position:absolute;
+        left:260px;
+        top:7px;
+}
+
+.lb-top-number {
+    float: left;
+    font-size: 28px;
+    margin-right: 7px;
+}
+
+.lb-top-inner-text {
+    display: table-cell;
+    vertical-align:middle;
+    font-size: 16px;
+}
+
+.lb-body-left-nav {
+    float: left;
+    width: 25%;
+}
+
+.lb-body-content {
+    float: left;
+    width: 75%;
+    border: 1px solid #6fa8dd;
+    padding: 0.75em 1.4em 1.4em 1.4em;
+}
+
+.lb-body-summary-content {
+    padding: 5px;
+}
+
+.lb-body-content .content-toolbar {
+    margin-top: 0px;
+}
+
+.lb-step-container {
+        min-height: 350px;
+  > .container {
+    width : auto;
+    input{
+      &[type=text] {
+       @include span(98%);
+      }
+      &[type=date]{
+      @include span(35%);
+      }
+    }
+  }
+}
+
+.lb-title {
+    color: #6fa8dd;
+    margin-top: 5px;
+}
+
+.lb-body-left-nav ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.lb-body-left-nav li {
+    padding: 0 4px;
+    background-color: $background-gray;
+    line-height: 33px;
+    height: 44x;
+    color: #FFF;
+    border-right: 2px solid #FFF;
+    margin: 4px 0;
+    position: relative;
+}
+
+.lb-body-left-nav li.active {
+    background-color: #FFF;
+    color: #6fa8dd;
+    border-left: 1px solid #6fa8dd;
+    border-top: 1px solid #6fa8dd;
+    border-bottom: 1px solid #6fa8dd;
+    border-right: 1px solid #FFF;
+}
+
+.lb-body-left-nav .inactive {
+    color: #FFF;
+}
+
+.lb-body-left-nav .inactive a {
+    color: #FFF;
+}
+
+.lb-body-left-nav li.success {
+    background-color: #6AA84F;
+}
+
+.lb-body-left-nav li.success a {
+    color: #FFF;
+}
+
+.lb-left-nav-letter {
+    padding-right: 5px;
+    font-size: 20px;
+    color: #FFF;
+}
+
+.lb-body-left-nav li.active .lb-left-nav-letter {
+    color: #6fa8dd;
+}
+
+li.lb-arrow {
+    text-align: center;
+    margin: 0;
+    padding-left: 5px;
+}
+
+li.lb-arrow span {
+    font-size: 18px;
+    line-height: 30px;
+    color: #FFF;
+}
+
+.lb-left-nav-active-extender {
+    display:none;
+}
+
+.lb-body-left-nav li.active .lb-left-nav-active-extender {
+    display: inline-block;
+    position: absolute;
+    top: -1px;
+    right: -2px;
+    height: 38px;
+}
+
+
+#lb-arrow-bottom-list-location-detail {
+    margin-top: 236px;
+}
+
+#lb-arrow-bottom-map {
+    margin-top: 291px;
+}
+
+.service-area-indent {
+    margin-left: 42px;
+}
+
+.list-box-header {
+    background-color: #6FA8DD;
+    color: #FFF;
+    padding: 5px;
+}
+
+.legend-title {
+    background-color: #6AA84F;
+    color: #FFF;
+    padding: 5px 5px 5px 10px;
+    height: 40px;
+    line-height: 30px;
+}
+
+.legend-body {
+    border-left: 1px solid #CCC;
+    border-right: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    padding: 10px;
+    font-size: 13px;
+}
+
+.legend-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 7px !important;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+#legend {
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
+    z-index: 999;
+    width: 162px;
+    background-color: #FFF;
+    opacity: 0.9;
+}
+
+#legend:hover {
+    opacity: 1;
+}
+
+.panel-default > div.quick-count-heading {
+     background-color: $background-gray;
+     border-color:#DDD;
+     color: #FFF;
+}
+
+.report-frame {
+     width: 100%;
+     height: 650px;
+}
+
+/* END - List Builder Wizard */
+
+.panel-default > .panel-heading {
+    background-color: $background-gray;
+    color: #FFF;
+}
+
+.table > thead > tr > th.table-title {
+    background-color: $background-gray;
+    color: white;
+    border: 1px solid #DDD;
+    font-size: 16px;
+    padding: 10px  15px;
+}
+
+.table > thead > tr.table-subtitle > th {
+    background-color: #EBEBEB;
+    color: #333;
+    font-weight: 600;
+}
+
+.ngCellText {
+    line-height : 40px;
+}
+
+.ngRow.even:hover, .ngRow.odd:hover {
+    background: #c0c0c0;
+}
+.close-icon{
+    color:#fff;
+    font-size:22px;
+    top:-5px;
+}
+.modal-header span{
+    color:#fff;
+}
+
+.paddingMedium {
+    padding: 10px 0;
+}
+
+.marginLeftSmall {
+    margin-left: 5px;
+}
+
+.paddingSmall {
+    padding: 5px;
+}
+
+.btn-small {
+    height: 30px;
+    line-height: 15px;
+}
+
+.outer-wrap-widgets{
+    background-color: #6AA84F;padding:3px 32px 0 0;height:200px;
+}
+
+.outer-wrap-widgets a{
+    color:#666;
+}
+
+.inner-wrap-widgets{
+    background:#fff;padding:5px;height:198px;
+}
+
+.widget-header{
+    color:#666666;
+}
+
+.margin-null{
+    margin:0;
+}
+
+.widget-label-container{
+    padding:10px;
+}
+
+.widget-label{
+    padding: 5px 0px;
+
+}
+
+.font-xs{
+    font-size:12px;
+}
+
+.push-left-small{
+    margin-left:5px;
+}
+
+.push-left-med{
+    margin-left:10px;
+}
+
+.alignCenter{
+    text-align:center;
+}
+
+.padding-null{
+    padding:0;
+}
+.panel-group .panel-heading+.panel-collapse .panel-body{
+    border:0;
+}
+
+.margin-Right-DefineFilters {
+margin-right : -15px;
+}
+
+.margin-Left-DefineFilters {
+margin-left : -15px;
+}
+
+.padding-DefineFilters {
+padding-bottom :20px
+}
+
+.summaryLabel
+{
+    display:inline;
+}
+
+.labelText
+{
+   font-weight : bold;
+   width :11em;
+   display : inline-block;
+}
+
+
+
+.taskNotification
+{
+   margin-right: 10em;
+}
+}
+.taskNotificationSuccess {
+    .modal-close{
+        @include icon-font('cancel-circled2', 30px,white);
+        float: right
+    }
+}
+
+.taskNotificationSuccess {
+  @include span(full);
+  padding: 17px;
+  margin-bottom: 1em;
+  color: white;
+  font-size: large;
+  background: palette(green, light);
+}
+
+.list-group-item-heading{
+  margin-top: -1em;
+}

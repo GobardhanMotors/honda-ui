@@ -1,0 +1,357 @@
+%sgButton{
+  color : #fff;
+  height: 40px;
+  min-width : 75px;
+  border-width : 1px;
+  border-style : solid;
+  display: inline-block;
+  @include single-transition(background-color, 300ms, linear);
+  &:disabled {
+    color : #ccc;
+    border-color: #ccc;
+    background-color: #eee;
+  }
+}
+.sg-button{
+  @extend %sgButton;
+}
+
+.btn:focus, button:focus, a.edit, a.yellow {
+  // TODO: this is not an ideal accessibility wise - but fortunately these buttons do still contain a hover that matches the :focus
+  @include box-shadow(none);
+  outline: none;
+}
+
+.button {
+  @extend %sgButton;
+
+  span[class*=icon]{
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    min-width: 30px;
+    min-height: 30px;
+  }
+  .button-text {
+    font-weight: 700;
+    color: black;
+    vertical-align : super;
+    margin-left: .25em;
+  }
+}
+a.button:hover{
+   text-decoration: none;
+}
+.button-add{
+  @extend %sgButton;
+  min-width: 75px;
+  width: auto;
+  >span:first-child {
+    @extend .General-icon_add_6fa8dc_30x30 !optional;
+    @extend %icon-base;
+    display: inline-block;
+    }
+  .button-text{
+    vertical-align: super;
+  }
+  border: none;
+  background-position : left center;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+.button-primary, .btn-primary {
+  @extend %sgButton;
+  @include contrasted(palette(blue,dark));
+  border-color : #999;
+  color: #fff;
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: #6fa8dc;
+    border-color : #e2f4fc;
+  }
+  &:active {
+    color: #fff;
+    background-color: #6aa84f;
+    border-color : #93c47d;
+  }
+}
+.button-secondary, .btn-secondary {
+  @extend %sgButton;
+  color : palette(blue, dark);
+  background-color: #fff;
+  border-color :  palette(blue, dark);
+  &:hover,
+  &:focus {
+    background-color: #ddd;
+  }
+  &:active {
+    color: #fff;
+    background-color: #999;
+    border-color : #666;
+  }
+}
+.button, .button-primary, .button-secondary, .btn-secondary {
+   span[class*=icon]{
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+  }
+  .button-text{
+    vertical-align: super;
+    margin-left: .25em;
+  }
+}
+.round-button{
+    display:inline-block;
+    @include border-radius(50%);
+    min-width: 25px;
+    width:25px;
+    height:25px;
+    border: 2px solid #f5f5f5;
+    color:#f5f5f5;
+    text-align:center;
+    text-decoration:none;
+    background: #464646;
+    @include box-shadow(palette(grey) 0 0 3px);
+    font-size:15px;
+    font-weight:bold;
+}
+.round{
+    display:block;
+    width:60px;
+    height:60px;
+    line-height:60px;
+    border: 2px solid #f5f5f5;
+    border-radius: 50%;
+    color:#f5f5f5;
+    text-align:center;
+    text-decoration:none;
+    background: #464646;
+    box-shadow: 0 0 3px gray;
+    font-size:20px;
+    font-weight:bold;
+}
+
+%tooltip-top {
+  margin-top: -3px;
+  padding: 5px 0;
+  .tooltip-arrow {
+    border-top-color: #fff;
+    bottom: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px 5px 0;
+  }
+
+}
+
+@mixin custom-tooltip-top ($color) {
+  $class-color-name: str-slice(to-lower-case(ie-hex-str($color)), 4, 10);
+  .top_#{$class-color-name} {
+    @extend %tooltip-top;
+    .tooltip-inner {
+      border-top-color: $color;
+    }
+  }
+}
+
+// class name ends up being .top_ff9900
+@include custom-tooltip-top(#ff9900);
+@include custom-tooltip-top(#e06666);
+@include custom-tooltip-top(#6aa84f);
+@include custom-tooltip-top(#6ba94f);
+@include custom-tooltip-top(#000000);
+@include custom-tooltip-top($sg_bashful_blue);
+
+.top_wide {
+  @extend %tooltip-top;
+  min-width: 320px;
+  width: auto;
+  .tooltip-inner {
+    max-width: 100%;
+  }
+}
+
+.top_med {
+  @extend %tooltip-top;
+  width: 150px;
+  .tooltip-inner {
+    max-width: 100%;
+  }
+}
+
+@mixin custom-med-tooltip-top ($color) {
+  $class-color-name: str-slice(to-lower-case(ie-hex-str($color)), 4, 10);
+  .top_med_#{$class-color-name} {
+    @extend .top_med;
+    .tooltip-inner {
+      border-top-color: $color;
+    }
+  }
+}
+
+@include custom-med-tooltip-top (#f8981d);
+@include custom-med-tooltip-top (#6BA94F);
+@include custom-med-tooltip-top (#E26565);
+@include custom-med-tooltip-top (#70A8DA);
+
+.top_large {
+  @extend %tooltip-top;
+  width: 245px;
+  .tooltip-inner {
+    max-width: 100%;
+  }
+}
+
+@mixin custom-large-tooltip-top ($color) {
+  $class-color-name: str-slice(to-lower-case(ie-hex-str($color)), 4, 10);
+  .top_large_#{$class-color-name} {
+    @extend .top_large;
+    .tooltip-inner {
+      border-top-color: $color;
+    }
+  }
+}
+
+@include custom-large-tooltip-top (#f8981d);
+@include custom-large-tooltip-top (#6BA94F);
+@include custom-large-tooltip-top (#E26565);
+@include custom-large-tooltip-top (#70A8DA);
+@include custom-large-tooltip-top (#000000);
+
+%has-button-hover {
+  position: relative;
+  &:after {
+    content: '';
+    display: inline;
+    float: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 50%;
+    top: 50%;
+    right: 50%;
+    bottom: 50%;
+    border-radius: 1000em;
+    border: 1px solid transparent;
+    background-color: transparent ;
+    @include box-sizing(border-box);
+    @include transition-property(width, height, bottom, right, left, top, border);
+    @include transition-duration(200ms, 200ms, 200ms ,200ms ,200ms, 200ms, 100ms);
+    @include transition-timing-function(cubic-bezier(0.455, 1, 0.700, 1) cubic-bezier(0.455, 1, 0.700, 1) cubic-bezier(0.455, 1, 0.700, 1) cubic-bezier(0.455, 1, 0.700, 1) cubic-bezier(0.455, 1, 0.700, 1) cubic-bezier(0.455, 1, 0.700, 1) linear);
+  }
+}
+
+%button-hover {
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  right: -10%;
+  bottom: -10%;
+  z-index: 1;
+}
+
+
+// buttons
+.btn {
+  text-decoration: none;
+  &:hover, &:focus {
+    .icon-label {
+      color: #999;
+    }
+    [class*="6fa8dc_30x30"]:after {
+      @extend %button-hover;
+      border: 1px solid #6fa8dc;
+    }
+    [class*="333333_30x30"]:after {
+      @extend %button-hover;
+      border: 1px solid #333333;
+    }
+    [class*="999999_30x30"]:after {
+      @extend %button-hover;
+      border: 1px solid #999999;
+    }
+    [class*="6aa84f_30x30"]:after {
+      @extend %button-hover;
+      border: 1px solid #6aa84f;
+    }
+    [class*="e06666_30x30"]:after, .General-icon_clear_30x30:after {
+      @extend %button-hover;
+      border: 1px solid #e06666;
+    }
+    [class*="ff9900_30x30"]:after {
+      @extend %button-hover;
+      border: 1px solid #ff9900;
+    }
+    
+  }
+
+  [class*="6fa8dc_30x30"], [class*="333333_30x30"], [class*="6aa84f_30x30"], [class*="999999_30x30"], [class*="e06666_30x30"], [class*="ff9900_30x30"], .General-icon_clear_30x30 {
+    @extend %has-button-hover;
+  }
+}
+
+.icon-label {
+  color: #666;
+  text-decoration: none;
+  padding-left: 0.5em;
+  @include single-transition(color, 100ms, linear);
+}
+
+.red.popover {
+    border-top-color: #E06666;
+}
+
+
+.purple.popover {
+    border-top-color: #8E7CC3;
+}
+.no-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+.button-bar {
+  @extend .clearfix;
+  margin-top: 1em;
+  > .heading {
+    margin-top: .25em;
+  }
+  & + .table, & + .ngGrid, & + .table-scrolling, & + accordion .panel-group {
+    margin-top: 1em;
+  }
+  > a.btn {
+    padding-left: 0;
+  }
+}
+
+.progress-tooltip {
+  background: #fff;
+  border-top-width: 4px;
+  border-top-style: solid;
+  border-top-color: #6ba94f;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  margin-top: -54px;
+  position: relative;
+  width: 270px;
+  padding: 5px; 
+  margin-left: -145px;
+  text-align: center;
+}
+
+.progress-tooltip:after {
+  position: absolute;
+  display: inline-block;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #fff;
+  top: 42px;
+  content: '';
+  left: 50%;
+}

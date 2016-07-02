@@ -1,0 +1,49 @@
+﻿.custom-date{
+	width: 305px;
+	margin-top: 38px;
+}
+.custom-date-icon{
+  margin-top: 38px;
+}
+section.main .custom-time-picker{
+  padding-bottom: 26px;
+  table.datapicker {
+    border: 0px;
+    background: transparent;
+    tbody {
+      tr {
+        background-color: transparent;
+        &:hover {
+          background-color: transparent;
+        }
+        td {
+          border: 0;
+          button {
+            height: 30px;
+            margin-left: 5px;            
+          }
+        }
+      }
+    }
+  }
+}
+.timepicker-wrapper   {
+  background: #cccccc;
+  width:166px;
+  height:100px; 
+  opacity: 0.5;
+  position: absolute;
+  z-index: 1;
+}
+.datepicker-popup {
+ .form-control {
+    height: 10px;
+    padding: 15px;
+  }
+}
+
+.datepicker-popup {
+  .btn {
+      padding: 1px 10px;
+  }
+} 

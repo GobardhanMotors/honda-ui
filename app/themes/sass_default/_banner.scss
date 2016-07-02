@@ -1,0 +1,241 @@
+$bannerHeight: 70px;
+$bannerFontSize : 12px;
+.banner {
+  font: $bannerFontSize / 18px $base-font-family;
+  @include span(full no-gutters);
+  min-height: $bannerHeight;
+  background-color: $bannerBGC;
+  color: palette(grey, x-dark);
+  padding-left: 1em;
+  padding-right: 1em;
+  a {
+    @include transition(color 100ms linear);
+    &:hover{
+              text-decoration : none;
+              color : palette(blue);
+            };
+  }
+  // extra 10px to accommodate slightly over 1200 screens
+  @include breakpoint(1210px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  > header {
+    @include span(container($medseek-context) first no-gutters);
+    h1 {
+      @extend .t-xlarge;
+      a {
+        @include replace-text("img_medseek_hdr_logo.png");
+        @include background-size(contain);
+        background-position: left 50%;
+        display: block;
+        min-height: 40px;
+      }
+    }
+  }
+  .banner-content {
+    @include span(container($medseek-content) last no-gutters);
+  }
+  .siteNav {
+    @include span(5 of 12);
+    min-width: span(4 of 12);
+    padding-top: .5em;
+    ul {
+      padding-top: .25em;
+      @include horizontal-list;
+      > li {
+        height: 60px;
+        a {
+          vertical-align: -125%;
+          font-size: $bannerFontSize;
+          display: block;
+          text-align: left;
+          float: left;
+          color: black;
+            &:hover{
+              text-decoration : none;
+              color : palette(blue);
+            };
+        }
+      }
+    }
+  }
+  .siteSearch {
+    @include span(3 of 12);
+    padding-top: 1em;
+    input[type='search'] {
+      @include border-radius(15px);
+      border: 1px #ddd solid;
+      height: 30px;
+      font-size: $bannerFontSize;
+      background: #efeeee;
+      border: 0px;
+      color: #6fa8dc;
+      &::-webkit-input-placeholder {
+        color: #6fa8dc;
+      }
+      &:-moz-placeholder {
+        color: #6fa8dc;
+      }
+      &::-moz-placeholder {
+        color: #6fa8dc;
+      }
+      &:-ms-input-placeholder {
+        color: #6fa8dc;
+      }
+    }
+    input[placeholder] {
+      color: #6fa8dc;
+    }
+    .glyphicon-search {
+      top: -25px;
+      left: 9px;
+      color: #999;
+    }
+    .dropdown-menu {
+      height: 200px;
+      overflow-y: scroll;
+    }
+    padding-left: 0px;
+    padding-right: 5px;
+    margin-right: 5px;
+  }
+  .siteUser {
+    @include span(4 of 12 last);
+  }
+  .user {
+    @include span(56% first no-gutters);
+    p {
+      margin: 0 0 -1px 0;
+      font-size: $bannerFontSize;
+    }
+    > p:nth-child(0n+2) {
+        font-weight: 700;
+      }
+  }
+  .loggedin {
+    float: right;
+    padding-top: .5em;
+    span {
+      display: block;
+      height: 40px;
+    }
+  }
+  .logOut:hover {
+    cursor: pointer;
+  }
+  p {
+    margin: .25em;
+  }
+}
+
+%icon {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  min-height: 40px;
+}
+
+%icon-header {
+  @extend %icon;
+  height: 40px;
+  width: 40px;
+  float: none;
+  padding-left: .75em;
+  // background-color: palette(blue,base);
+}
+
+.icon-container {
+  height: 60px;
+  width: 55px;
+  div:first-child {
+    margin: 0 10px;
+    float: none;
+    .badge-header {
+      @include circleText(25px, palette(red, base));
+      background-color: palette(red, base);
+      color: #fff;
+      position: relative;
+      left: 25px;
+    }
+    .badge-notifications {
+      @include circleText(25px, palette(red, base));
+      background-color: palette(red, base);
+      color: #fff;
+      position: relative;
+      left: 15px;
+    }
+    .notifications-header {
+      color: #fff;
+      position: relative;
+      left: 48%;
+      padding-left: 5px;
+      padding-right: 5px;
+      border-radius: 13px;
+      min-width: 25px;
+      width: auto;
+    }
+  }
+  a {
+    display: inline-block;
+    span {
+      display: block;
+      text-align: center;
+      margin-top: -5px;
+    }
+
+     td div {
+      margin-left: 10px;
+    }
+  }
+}
+
+.site-search-icon_30x30 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.flyout {
+  z-index: 1000;
+  position: absolute;
+  left: -60px;
+  top: 75px;
+  color: #333333;
+  text-align: left;
+  width: 410px;
+  }
+  .flyout-scroll {
+    max-height: 240px; overflow-y: auto;
+    }
+.flyout-callout {
+    position: relative;
+    margin: 18px 0;
+    padding: 18px 20px;
+    background-color: #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    top: -10px;
+    .notch {
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      margin: 0;
+      border-top: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid #fff;
+      padding: 0;
+      width: 0;
+      height: 0;
+      font-size: 0;
+      line-height: 0;
+    }
+  }
+.border-callout 
+{ border: 1px solid #6fa8dc; padding: 0px 10px 10px; 
+.border-notch { border-bottom-color: #6fa8dc; top: -11px; }
+}
+.nav-icon-spacing{
+margin: 0 10px;
+}

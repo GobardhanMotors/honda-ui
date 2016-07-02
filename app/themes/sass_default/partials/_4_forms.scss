@@ -1,0 +1,256 @@
+$inputs-list: 'input[type="email"]',
+              'input[type="number"]',
+              'input[type="password"]',
+              'input[type="search"]',
+              'input[type="tel"]',
+              'input[type="text"]',
+              'input[type="url"]',
+
+              // Webkit & Gecko may change the display of these in the future
+              'input[type="color"]',
+              'input[type="date"]',
+              'input[type="datetime"]',
+              'input[type="datetime-local"]',
+              'input[type="month"]',
+              'input[type="time"]',
+              'input[type="week"]';
+$inputs-button-list: 'input[type="button"]',
+                     'input[type="reset"]',
+                     'input[type="submit"]';
+
+@function assign-inputs($inputs, $pseudo: null) {
+  $list : ();
+
+  @each $input in $inputs {
+    $input: unquote($input);
+    $input: if($pseudo, $input + ":" + $pseudo, $input);
+    $list: append($list, $input, comma);
+  }
+
+  @return $list;
+}
+
+// Bare inputs
+//************************************************************************//
+$all-text-inputs : assign-inputs($inputs-list);
+
+// Hover Pseudo-class
+//************************************************************************//
+$all-text-inputs-hover : assign-inputs($inputs-list, hover);
+
+// Focus Pseudo-class
+//************************************************************************//
+$all-text-inputs-focus : assign-inputs($inputs-list, focus);
+
+// Focus Pseudo-class
+//************************************************************************//
+$all-text-inputs-disabled: assign-inputs($inputs-list, disabled);
+
+
+#{$all-text-inputs}, textarea, select{
+  @extend .form-control;
+}
+
+textarea.form-control, textarea, select.form-control, select {
+  font-size: 12px;
+}
+
+
+#{$all-text-inputs}{
+  height: 30px;
+  font-size: 12px;
+  border: 1px #CCC solid;
+  @include contrasted(#fff, $sg_dark_grey);
+
+  &:focus{
+    border-color: $jordy_blue;
+
+  }
+  &.ng-dirty{
+  	&:valid{
+      border-color: $apple;
+    }
+    &:invalid,&.ng-invalid{
+      border-color: $froly;
+    }
+  }
+  .has-error &.ng-dirty {
+    &:valid{
+      border-color: $froly;
+    }
+  }
+  &:disabled{
+    border-color: #ccc;
+    color: #ccc;
+  }
+}
+
+.label-soft {
+  font-weight: normal;
+}
+
+legend.control-label {
+  display: inline-block;
+  &:not(.col-sm-6):not(.col-sm-5):not(.col-sm-4):not(.col-sm-3):not(.col-sm-2):not(.col-sm-1) {
+    width: 100%;
+    padding: 0 15px;
+  }
+  margin-bottom: 0;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  border: 0;
+  border-bottom: 0;
+  font-weight: bold;
+  @include breakpoint(768px){
+    &.col-sm-4 {
+      width: 33.3333333333%;
+    }
+  }
+}
+
+fieldset{
+  &.radios, &.checks{
+  	legend {
+        @include span (2 of 12 first);
+        border: none;
+        font-size: 1em;
+        font-weight: bold;
+      }
+
+      label {
+        height: 1em;
+        width: auto;
+      }
+      input {
+        width: auto;
+        margin-left : 3em;
+      }
+  }
+}
+label, .label-text{
+  font-weight: bold;
+}
+.input-group.input-group-with-icon {
+  position: relative;
+  width: 100%;
+  input.input-with-icon.form-control {
+    width: 100%;
+    padding-left: 3.5em;
+    min-height: 36px;
+    @include border-top-right-radius(4px);
+    @include border-bottom-right-radius(4px);
+    @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+    @include box-shadow(inset 0 1px 1px rgba(black,0.075));
+  }
+  .input-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 36px;
+    width: auto;
+    z-index: 2;
+  }
+}
+
+// This corrects an issue of alignment with radio buttons
+
+.modal-content .form-horizontal .radio-inline,
+.modal-content .form-horizontal .checkbox-inline {
+  line-height: 1.6;
+}
+
+.form-horizontal .radio-inline,
+.form-horizontal .checkbox-inline {
+  line-height: 1.7;
+}
+
+.form-horizontal .radio label,
+.form-horizontal .checkbox label {
+  line-height: 1.4;
+}
+
+.form-horizontal .radio-inline,
+.form-horizontal .checkbox-inline {
+  padding-top: 5px;
+}
+
+.form-horizontal .radio,
+.form-horizontal .checkbox {
+  //padding-top: 6px;
+  &.checkbox-in-well {
+    padding-top: 5px;
+    @include breakpoint (768px) {
+      padding-left: 5px;
+    }
+  }
+  input[type="checkbox"], input[type="radio"] {
+    margin-top: 3px;
+  }
+}
+
+.control-label.text-center {
+  text-align: center;
+}
+
+.control-label.text-left {
+  text-align: left;
+}
+
+.addon-sm {
+  font-size: 10px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.well-sm .form-group {
+  margin-bottom: 0;
+}
+
+%input-field-wrapper-with-icon {
+  padding-right: 40px;
+  position: relative;
+  >.btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.well.selected {
+  background-color: palette(blue,light);
+}
+
+.input-field-wrapper-with-icon {
+  @extend %input-field-wrapper-with-icon;
+}
+
+.multi-select-with-button {
+  @extend %input-field-wrapper-with-icon;
+
+  .custom-multi-select {
+    width: 100%;
+    .button {
+      width: 100%;
+    }
+    .checkboxLayer {
+      right: 40px;
+      left: 0;
+      margin-right: 0;
+    }
+  }
+  .btn {
+    top: 5px;
+  }
+
+}
+
+button,
+input[type='button'],
+input[type='submit'],
+a{
+  &:focus:active{
+      border: none;
+      outline: none;
+    }
+}

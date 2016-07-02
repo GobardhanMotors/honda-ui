@@ -1,0 +1,96 @@
+@import "color-schemer";
+$cs-color-model : 'rgb';
+$jordy_blue: #6fa8dc;
+$light_cyan : #E2FAFC;
+$kashmir_blue :#526e83;
+$froly: #E06666;
+$apple: #6AA84F;
+$olivine : #93c470;
+$noble: #999;
+$orange_peel: #F90;
+$moody_blue: #8E7CC3;
+$dandelion: #FFCD5D;
+
+$cs-primary : $jordy_blue;
+$cs-scheme : 'triad';
+
+$primaryColor :  cs-primary();
+$secondaryColor : cs-secondary();
+$tertiaryColor : cs-tertiary();
+
+$bannerBGC : #fff;
+$palettes : (
+    blue: (
+        base:   $jordy_blue,
+        light:  $light_cyan,
+        dark:   $kashmir_blue
+    ),
+    red: (
+        base:   $froly,
+        light:  lighten($froly, 10%),
+        dark:   darken($froly, 10%)
+    ),
+    green: (
+        base:   $apple,
+        light:  $olivine,
+        dark:   darken($apple, 20%)
+    ),
+    orange : (
+        base:   $orange_peel,
+        light:  lighten($orange_peel, 10%),
+        dark:   darken($orange_peel, 10%)
+    ),
+    purple: (
+        base:   $moody_blue,
+        light:  lighten($moody_blue, 10%),
+        dark:   darken($moody_blue, 10%)
+    ),
+    yellow: (
+        base:   $dandelion,
+        light:  lighten($dandelion, 10%),
+        dark:   darken($dandelion, 10%)
+    ),
+    grey: (
+        base:  $noble,
+        xxx-light: #eee,
+        xx-light: #EBEBEB,
+        x-light: #CCC,
+        light: #B4B4B4,
+        dark : #666,
+        x-dark : #333
+    ),
+    white : (
+      base: #fff
+    ),
+    black : (
+      base: #000
+    )
+
+);
+
+
+@function palette($palette, $tone: 'base') {
+    @return map-get(map-get($palettes, $palette), $tone);
+};
+
+/* Style Guide Color Name */
+  $sg_bold_blue :palette(blue,dark);
+  $sg_bashful_blue : palette(blue);
+  $sg_rosy_red : palette(red);
+  $sg_gamma_green : palette(green);
+  $sg_organic_orange : palette(orange);
+  $sg_granny_smith_green : palette(green,light);
+  $sg_prairie_purple : palette(purple);
+  $sg_yummy_yellow : palette(yellow);
+  $sg_baby_blue : palette(blue,light);
+  $sg_dark_grey : palette(grey,x-dark);
+  $sg_medium_grey : palette(grey,dark);
+  $sg_light_grey : palette(grey);
+  $sg_dark_highlight : palette(grey,light);
+  $sg_light_highlight : palette(grey,x-light);
+  $sg_table_row : palette(grey,xx-light);
+
+
+
+/* Other Color Definitions */
+$hr-border: $sg_light_highlight

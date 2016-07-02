@@ -1,0 +1,302 @@
+
+ @import "compass/typography/vertical_rhythm";
+ @import "breakpoint";
+ @import "0.layout";
+ @import url('//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,400italic,700,700italic');
+
+ // The base font size
+$base-font-size: 14px;
+// Base line height
+$base-line-height: 20px;
+// Rhythm unit (Compass vertical rhythm)
+
+$base-font-family: 'Roboto', Helvetica, Arial, sans-serif;
+$base-font-family-light: 'Roboto Light','Helvetica Light', Arial, sans-serif;
+$base-font-weight: 400;
+$base-font-color: #303033;
+$secondary-font-family: 'Myriad Pro', 'Century Gothic', sans-serif;
+$secondary-font-weight: 400;
+$secondary-font-color: #303033;
+
+$tiny-font-size: 8.192px;
+$tiny-font-leading: 0.75;
+$small-font-size: 10.24px;
+$small-font-leading: 0.75;
+$base-font-leading: 1;
+$medium-font-size: 14px;
+$medium-font-leading: 1.25;
+$large-font-size: 20px;
+$large-font-leading: 1.5;
+$xlarge-font-size: 29.298px;
+$xlarge-font-leading: 1.75;
+
+
+@mixin responsiveTypeSize($size) {
+ @if $size == "tiny" {
+  @include adjust-font-size-to($tiny-font-size, $tiny-font-leading);
+ }
+ @if $size == "small" {
+  @include adjust-font-size-to($tiny-font-size, $tiny-font-leading);
+  @include breakpoint($small-screen-width) {
+   @include adjust-font-size-to($tiny-font-size, $tiny-font-leading);
+  }
+ }
+ @if $size == "base" {
+  @include adjust-font-size-to($small-font-size, $small-font-leading);
+  @include breakpoint($small-screen-width) {
+   @include adjust-font-size-to($base-font-size, $base-font-leading);
+  }
+ }
+ @if $size == "medium" {
+  @include adjust-font-size-to($base-font-size, $base-font-leading);
+  @include breakpoint($small-screen-width) {
+   @include adjust-font-size-to($medium-font-size, $medium-font-leading);
+  }
+ }
+ @if $size == "large" {
+  @include adjust-font-size-to($large-font-size, $large-font-leading);
+  @include breakpoint($small-screen-width) {
+   @include adjust-font-size-to($large-font-size, $large-font-leading);
+  }
+ }
+ @if $size == "xlarge" {
+  @include adjust-font-size-to($xlarge-font-size, $xlarge-font-leading);
+  @include breakpoint($small-screen-width) {
+   @include adjust-font-size-to($xlarge-font-size, $xlarge-font-leading);
+  }
+ }
+}
+
+// Type weights
+%t-ultrastrong {
+ font-weight: 900;
+}
+%t-strong {
+ font-weight: 700;
+}
+%t-regular {
+ font-weight: 400;
+}
+%t-light {
+ font-weight: 300;
+}
+%t-ultralight {
+ font-weight: 200;
+}
+
+// Type size variants
+%t-tiny {
+ @include responsiveTypeSize(tiny);
+}
+%t-small {
+ @include responsiveTypeSize(small);
+}
+%t-base {
+ @include responsiveTypeSize(base);
+}
+%t-medium {
+ @include responsiveTypeSize(medium);
+}
+%t-large {
+ @include responsiveTypeSize(large);
+}
+%t-xlarge {
+ @include responsiveTypeSize(xlarge);
+}
+.t-tiny {
+ @include responsiveTypeSize(tiny);
+}
+.t-small {
+ @include responsiveTypeSize(small);
+}
+.t-base {
+ @include responsiveTypeSize(base);
+}
+.t-medium {
+ @include responsiveTypeSize(medium);
+}
+.t-large {
+ @include responsiveTypeSize(large);
+}
+.t-xlarge {
+ @include responsiveTypeSize(xlarge);
+}
+
+.default-context{
+  font : $base-font-size/$base-line-height $base-font-family
+}
+.page-header{
+  font-family: $base-font-family;
+  font-size: $large-font-size;
+  font-weight: bold;
+  color: #333333;
+  margin: 0 0 1em;
+  border-bottom: none;
+}
+body{
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  color : #666;
+}
+h1,h2,h3,h4,h5,h6{
+    @extend %t-strong;
+    //text-transform: capitalize;
+}
+.h1-style{
+  @extend .t-xlarge;
+  color: #333;
+}
+.h2-style{
+  @extend .t-large;
+}
+.h3-style{
+ @extend .t-medium;
+}
+.h4-style{
+  @extend .t-medium
+}
+.h5-style{
+  font-size: 1em;
+}
+.h6-style{
+  font-size: 1em;
+}
+
+ol.number {
+    list-style: none;
+    margin: 1em 0 0 0;
+    padding: 0;
+    counter-reset: li; /* reset counter for ol (li is just arbitrary identifier) */
+    > li {
+        position: relative;
+        padding: .75em 0 0 3.5em;
+        margin: 0 0 1.5em 0;
+    }
+    > li:before {
+        position: absolute;
+        left: 0;
+        top: .25em;
+        display: block;
+        content:counter(li); /* set its content to CSS generated counter, using the "li" counter defined above */
+        counter-increment:li; /* increment the li counter each time, assumed starting index is 0 */
+        color: $sg_bashful_blue;
+        font-size: 1.5em;
+        font-family: "Arial Narrow", Arial, sans-serif;
+        border-radius: 10em;
+        border-width: 2px;
+        border-style: solid;
+        border-color: $sg_bashful_blue;
+        padding: 0 .45em;
+        min-width: 1.6em;
+        display: block;
+        float: left;
+        line-height: 1.4em;
+        height: 1.6em;
+    }
+}
+
+ul.seperated-by-line {
+  @extend .list-unstyled;
+  > li {
+    @extend .clearfix;
+    border-bottom: 1px solid #ccc;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  &.with-text > li {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+}
+
+hr.divider-sm {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.well {
+  hr {
+    border-color: #ccc;
+  }
+}
+
+ol.alpha-sm {
+  margin: 0;
+  padding: 0;
+  list-style-type: lower-alpha;
+  padding-left: 1.25em;
+  >li {
+    margin-bottom: 0.25em;
+  }
+}
+
+.page-subheader{
+  color: $jordy_blue;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.popover-header{
+  @extend .page-subheader;
+  font-weight: 400;
+}
+.paragraph-header {
+  @extend .h1-style;
+  font-size: 12px;
+}
+.require-field{
+  color:$sg_rosy_red;
+}
+label, .label-text{
+  &.required-field{
+    position: relative;
+    left : .5em;
+    color : inherit;
+    &:after{
+      content : "* ";
+      color : black;
+      position: relative;
+      left : .5em;
+    }
+  }
+}
+p.required-field{
+    text-align: right;
+    @extend label.required-field;
+    padding-right: .5em;
+  }
+a {
+  cursor: pointer;
+}
+
+.content-body > .main > .view > div > h1 {
+  margin: 0;
+}
+
+.dt-as-left-aligned {
+  dt {
+    text-align: left;
+  }
+  &.xsmicro-list {
+    @include dl-type($xsmicro-list);
+  }
+  &.micro-list {
+    @include dl-type($micro-list);
+  }
+  &.short-list {
+    @include dl-type($short-list);
+  }
+  &.medium-list {
+    @include dl-type($medium-list);
+  }
+  &.large-list {
+    @include dl-type($large-list);
+  }
+  &.xlarge-list {
+    @include dl-type($xlarge-list);
+  }
+}

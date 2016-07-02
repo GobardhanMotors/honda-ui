@@ -1,0 +1,282 @@
+.categoryStyle {
+     width: 600px;
+     border: 1px solid rgb(212,212,212);
+}
+
+.hover-icon{
+  height:30px;
+  width:30px;
+  background:rgb(29, 179, 222);
+  float:right;
+  border-radius: 50%;
+  cursor:pointer;
+  text-align:center;
+}
+.cr-popup {
+  height: 40px;
+}
+.cr-popup-buttons {
+  padding-right: 4px;
+  float: left;
+  cursor: pointer;
+  line-height: 30px;
+}
+.cr-popup-buttons span {
+  width: 20px;
+  float: left;
+  height: 23px;
+  cursor: pointer;
+  display: block;
+  margin-right: 5px;
+}
+.cr-popup-buttons img {
+  cursor: pointer;
+}
+.cr-GraphPopup {
+  width: 550px;
+  height: 30px;
+  color: #000;
+}
+.cr-GraphPopup > div {
+  height: 30px;
+  float: left;
+  color: #000;
+}
+
+.cr-GraphPopup-Open,
+.cr-GraphPopup-Missed,
+.cr-GraphPopup-ClosedComplete,
+.cr-GraphPopup-Scheduled{
+  text-align: center;
+  line-height: 30px;
+  color:#FFF;
+  @include transition(background-color 200ms linear);
+}
+.cr-GraphPopup-Open {
+  background-color: #70A8DA;
+  &:hover {
+    background-color: lighten(#70A8DA,10%);
+  }
+}
+.cr-GraphPopup-Missed {
+  background-color: #E26565;
+  &:hover {
+    background-color: lighten(#E26565,10%);
+  }
+}
+.cr-GraphPopup-ClosedComplete {
+  background-color: #6BA94F;
+  &:hover {
+    background-color: lighten(#6BA94F,10%);
+  }
+}
+.cr-GraphPopup-Scheduled {
+  background-color: #F8981D;
+  &:hover {
+    background-color: lighten(#F8981D,10%);
+  }
+}
+
+.pull-centerHeader {
+  text-align: center;
+  border-bottom: medium none !important;
+  cursor: pointer;
+}
+
+#table-th-partition > th {
+  border-top: medium none !important;
+}
+
+.crReportClick-tooltip {
+  text-align: right;
+  float: left;
+  position: relative;
+  a, a:hover {
+    text-decoration: none;
+  }
+}
+.crReportTooltip {
+  background: #FFF;
+  border-top: 4px solid #7DB9E8;
+  border-bottom: 1px solid #B2B2B2;
+  border-left: 1px solid #B2B2B2;
+  border-right: 1px solid #B2B2B2;
+  width: 135px;
+  height: 40px ;
+  position: absolute;
+  right: 49%;
+  top: -51px;
+  text-align: center;
+  display: none;
+  color: #000 ;
+}
+.crReportTooltip p{
+  padding-top:10px;
+}
+.crReportTriangle-bottom {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  right: 38%;
+  bottom: -9px;
+  margin-top: 17px;
+  background: #FFF;
+  border: 1px solid #CCC;
+  transform: rotate(135deg);
+  border-bottom: 0px;
+  border-left: 0px;
+}
+.ngCellText{
+  padding:8px 5px;
+}
+.action-icon-table{
+  cursor:pointer;
+}
+
+.pop-up-container{
+  display:none;
+  position:relative;
+  width: 97%;
+  line-height: 2;
+  z-index: 1000;
+  .triangle {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    margin-top: -20px;
+    background: #FFF;
+    border:1px solid #CCC;
+    transform: rotate(135deg);
+  }
+  .pop-up{
+    border-top:4px solid #7DB9E8;
+    border-bottom:1px solid #B2B2B2;
+    border-left:1px solid #B2B2B2;
+    border-right:1px solid #B2B2B2;
+    right:35px;
+    width:60%;
+    padding:10px;
+    height:222px;
+    position:absolute;
+    top:-90px;
+    background: #FFF;
+    line-height: 1.5;
+	.close-popup{
+		margin:-5px 0 0 0;
+	}
+    .pop-up-content-hold {
+        height: 160px;
+        overflow-y: scroll;
+        float: left;
+    }h3 {
+      margin-top: 5px;
+      font-size: 1.4em;
+      font-weight: bold;
+    }
+  }
+  .close-btn{
+    width:17px;
+    height:17px;
+    background:url(../../themes/default/img/close.png) no-repeat;
+    position:absolute;
+    right:10px;
+    top:10px;
+    z-index:9;
+    cursor:pointer;
+  }
+}
+.caremanagerreport{
+  .panel-body{
+    padding:15px 0;
+    .col-md-3{
+      padding:0 10px;
+    }
+  }
+  .panel-title > a{
+    font-weight:normal;
+      &:hover,
+      &:focus{
+        color:#6fa8dc;
+    }
+  }
+  .col-md-3 select{
+    margin:4px 0;
+  }
+  .task-bundle-label,
+  .panel-default {
+    &:hover{
+      color: #666666;
+    }
+  }> .panel-heading{
+    font-weight: bold;
+    &:hover{
+      color: #666666;
+    }
+    .stacked-right-small {
+      margin-top: -5px;
+    }
+  }
+  .openReportPopUp{
+    .panel-background {
+      position: relative;
+    }
+    .ngHeaderContainer {
+      background: #4E4E4E;
+      color: #fFF;
+    }
+    .action-icon-table {
+      position: absolute;
+      right: 0;
+    }
+    .panel-title {
+      padding-right:24px;
+    }
+  }
+  .patient-grid-modal {
+    border: 1px solid #666666;
+    float:left;
+	margin: 10px 0px 10px 0px;
+  }
+  .panel-default > .panel-heading{
+      color:#333333;
+    &:hover{
+      background-color: whitesmoke;
+    }
+  }
+  .panel-default.expanded > .panel-heading{
+    color:#6fa8dc;
+    &:hover{
+      background-color: #FFF;
+    }
+  }
+}
+.cm-report-icon{
+	span.icon-size{
+		margin-top:-7px;
+	}
+	
+}
+.careManagerPatientDetailPopUp{
+  .my-health-information-popup-header{
+    .close-popup{
+      margin:0;
+    }
+  }
+}
+ /*Remove scroll space*/
+.remove-scroll-space .gridStyle .ngViewport{
+	width: 100% !important;
+	.ngCanvas{
+		width: 100% !important;
+		.ngRow{
+			width: 100% !important;
+			border-bottom:none !important;
+			&:last-child{
+				border-bottom: 1px solid #d4d4d4 !important;			
+			}
+		}
+	}
+} 
+

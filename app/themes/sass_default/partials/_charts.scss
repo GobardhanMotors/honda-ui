@@ -1,0 +1,14 @@
+// Charts
+
+.chart.bar-chart.horizontal-bar-chart {
+	.report-data-label {
+		text-align: center;
+		color: white;
+	}
+}
+
+.bar-chart > * {
+  padding-left: 0;
+  padding-right: 0;
+  border: none;
+}

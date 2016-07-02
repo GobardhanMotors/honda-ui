@@ -1,0 +1,231 @@
+@font-face {
+    font-family: 'mediMarket';
+    src:    url('fonts/mediMarket.eot?x9yz2y');
+    src:    url('fonts/mediMarket.eot?x9yz2y#iefix') format('embedded-opentype'),
+        url('fonts/mediMarket.ttf?x9yz2y') format('truetype'),
+        url('fonts/mediMarket.woff?x9yz2y') format('woff'),
+        url('fonts/mediMarket.svg?x9yz2y#mediMarket') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="mm-"], [class*=" mm-"], .glyphicon {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'mediMarket' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.glyphicon-chevron-right:before {content:"\e91b"}
+.glyphicon-chevron-left:before {content:"\e91e"}
+.glyphicon-chevron-up:before {content:"\e92f"}
+.glyphicon-chevron-down:before {content:"\e930"}
+
+.mm-medibuddy:before {
+    content: "\e941";
+}
+.mm-medibuddy-plus:before {
+    content: "\e940";
+}
+.mm-goal:before {
+    content: "\e93d";
+}
+.mm-google-plus:before {
+    content: "\e93e";
+}
+.mm-lock:before {
+    content: "\e93f";
+}
+.mm-medicine:before {
+    content: "\e92a";
+}
+.mm-gym:before {
+    content: "\e901";
+}
+.mm-search1:before {
+    content: "\e903";
+}
+.mm-handicap:before {
+    content: "\e911";
+}
+.mm-parking:before {
+    content: "\e937";
+}
+.mm-close:before {
+    content: "\e938";
+}
+.mm-tick:before {
+    content: "\e939";
+}
+.mm-phone:before {
+    content: "\e93a";
+}
+.mm-envelope:before {
+    content: "\e93b";
+}
+.mm-rupee2:before {
+    content: "\e93c";
+}
+.mm-upload:before {
+    content: "\e936";
+}
+.mm-search:before {
+    content: "\e92b";
+}
+.mm-user:before {
+    content: "\e92c";
+}
+.mm-users:before {
+    content: "\e92d";
+}
+.mm-call-hospital:before {
+    content: "\e92e";
+}
+.mm-chevron-up:before {
+    content: "\e92f";
+}
+.mm-chevron-down:before {
+    content: "\e930";
+}
+.mm-caret-left:before {
+    content: "\e931";
+}
+.mm-caret-right:before {
+    content: "\e932";
+}
+.mm-caret-up:before {
+    content: "\e933";
+}
+.mm-check:before {
+  content: "\e939";
+}
+.mm-facebook:before {
+    content: "\e934";
+}
+.mm-caret-down:before {
+    content: "\e935";
+}
+.mm-stairs:before {
+    content: "\e927";
+}
+.mm-rupee:before {
+    content: "\e900";
+}
+.mm-wheelchair:before {
+    content: "\e902";
+}
+.mm-test:before {
+    content: "\e904";
+}
+.mm-dinner:before {
+    content: "\e905";
+}
+.mm-ambulance:before {
+    content: "\e906";
+}
+.mm-dc:before {
+    content: "\e907";
+}
+.mm-rocket:before {
+    content: "\e908";
+}
+.mm-health-care:before {
+    content: "\e909";
+}
+.mm-clinic:before {
+    content: "\e90a";
+}
+.mm-nursinghome:before {
+    content: "\e90b";
+}
+.mm-hospital:before {
+    content: "\e90c";
+}
+.mm-books:before {
+    content: "\e90d";
+}
+.mm-health-graph:before {
+    content: "\e90e";
+}
+.mm-cog:before {
+    content: "\e90f";
+}
+.mm-spa:before {
+    content: "\e910";
+}
+.mm-doctor:before {
+    content: "\e912";
+}
+.mm-heart-care:before {
+    content: "\e913";
+}
+.mm-heart:before {
+    content: "\e914";
+}
+.mm-heart-pulse:before {
+    content: "\e915";
+}
+.mm-health-gift:before {
+    content: "\e916";
+}
+.mm-cross:before {
+    content: "\e917";
+}
+.mm-cross-circle:before {
+    content: "\e918";
+}
+.mm-calendar:before {
+    content: "\e919";
+}
+.mm-home:before {
+    content: "\e91a";
+}
+.mm-chevron-right:before {
+    content: "\e91b";
+}
+.mm-chevron-right-circle:before {
+    content: "\e91c";
+}
+.mm-chevron-left-circle:before {
+    content: "\e91d";
+}
+.mm-chevron-left:before {
+    content: "\e91e";
+}
+.mm-warning:before {
+    content: "\e91f";
+}
+.mm-bar-graph:before {
+    content: "\e920";
+}
+.mm-pie-chart:before {
+    content: "\e921";
+}
+.mm-help:before {
+    content: "\e922";
+}
+.mm-question-circle:before {
+    content: "\e923";
+}
+.mm-watch:before {
+    content: "\e924";
+}
+.mm-clock:before {
+    content: "\e925";
+}
+.mm-map-marker:before {
+    content: "\e926";
+}
+.mm-flag1:before {
+    content: "\e928";
+}
+.mm-flag:before {
+    content: "\e929";
+}

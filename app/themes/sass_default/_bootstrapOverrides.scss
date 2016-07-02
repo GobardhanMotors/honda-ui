@@ -1,0 +1,31 @@
+//Override Bootstrap sass variables.
+@import 'partials/2_color';
+$gray-darker : #333;
+$gray-dark : #666;
+$grey :  #999;
+$grey-light : #ddd;
+$grey-lighter : #eee;
+$brand-primary : $kashmir_blue;
+$btn-primary-color : #fff;
+$btn-primary-border : #999;
+$brand-success : $olivine ;
+$brand-info : lighten($jordy_blue, 10%);
+$brand-warning :  $dandelion;
+$brand-danger : $froly;
+
+//Links
+$link-color : $jordy_blue;
+
+//Typography
+$font-family-sans-serif: 'Roboto Light','Helvetica Light', Arial, sans-serif;
+$font-size-base : 14px;
+
+//tables
+$table-bg-accent : palette(grey,xxx-light);
+$table-bg-hover : palette(blue, light);
+
+//buttons
+$btn-primary-bg : palette(blue, dark);
+$btn-primary-color :#fff;
+$btn-primary-border : #999;
+

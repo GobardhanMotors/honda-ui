@@ -1,0 +1,365 @@
+$filter-list-height : 2.5em;
+.care-manager {
+  .nav-list li {
+    font-size: 14px;
+    padding: 7px 13px;
+  }
+  .nav-title {
+    color: #fff;
+    padding: 0.1em 1em;
+    margin: 0;
+    background: transparent;
+    margin-bottom: 4px;
+    border: 0;
+    border-top: 1px solid #67859C;
+    font-size: 14px;
+    cursor: default;
+    text-transform: uppercase;
+    margin-top: 18px;
+    padding-top: 10px;
+  }
+  .nav-title-top {
+    padding-top: 0;
+    border-top: 0;
+  }
+  .delete-item{
+    @include nav-icon-font(delete);
+  }
+  h3{
+    @extend .t-large;
+    color: #fff;
+    padding: 0.1em 1em;
+    margin: 0;
+    background: #6fa8dc;
+    margin-bottom: 4px;
+    border: 1px solid #333;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .mytask-filters-item{
+    h3 {
+      @extend .t-medium;
+    }
+  }
+  .filter-settings{
+    padding : 2px;
+    color: #000000;
+    border: 1px solid #000;
+    background: #dddddd;
+    margin-top: -5px;
+    .configure{
+      @include bs-icon-font(filter, 1em palette(grey, xx-dark));
+      font-size: 1em;
+      color: $sg_medium_grey;
+      display : inline-block;
+      float : right;
+      position: absolute;
+      right: 2px;
+      top:7px;
+    }
+    >div{
+      @include contrasted(palette(blue, light));
+      min-height: 2.25em;
+      height: auto;
+      padding: 0.25em 0.25em 0;
+      background-color: #e2fafc;
+      border: 1px solid #000;
+      position:relative;
+      >span{@include span(85% no-gutters);}
+      a{
+        @include link-colors(palette(#000000));
+        @include span(15% last);
+        width:100%;
+      }
+    }
+    >ul{
+      @include contrasted(palette(#FFFFFF));
+      padding-left: 0;
+      margin: 0;
+      max-height : $filter-list-height * 5;
+      overflow-y : auto;
+    }
+    li {
+      padding: 0.3em 0 0 0.3em;
+      min-height: 2em;
+      max-height: $filter-list-height;
+      span{
+
+      >span{
+        display: inline-block;
+        @include ellipsis();
+        @include span(80% no-gutters)
+      }
+    > button{
+        span:first-child{
+
+        @include icon-font(trash);
+        &:before {
+          text-indent: -.75em;
+        }}
+     }
+     }
+    }
+  }
+
+}
+.my-tasks{
+  @include clearfix;
+  table{
+    width : 100%;
+    font-size: 1em;
+  }
+  caption {
+    font-size: 1.5em;
+    text-transform: capitalize;
+  }
+  tr{
+    padding : .25em;
+    font-size: 1em;
+  }
+  td{
+    @include ellipsis(false);
+  }
+}
+.mytask-filters{
+  >div{
+    @include contrasted(palette(blue, light));
+    >button{
+       @extend .btn;
+       @extend .btn-link;
+       float: right;
+       + div {
+         clear : right;
+       }
+    }
+  }
+
+}
+ .mytask-filters-item{
+  @include contrasted(palette(blue, dark));
+  border-bottom : 2px solid #526e83;
+  height: 30px;
+  &:last-of-type {
+    border-bottom : none;
+  }
+  &.expanded {
+    @include contrasted(palette(#000000));
+  }
+}
+$mytaskItem : 1px palette(grey) solid;
+.mytask-filter-item{
+  padding : .25em;
+  border-right: $mytaskItem;
+  border-left: $mytaskItem;
+  border-bottom : $mytaskItem;
+}
+
+.care-manager-tasks {
+  td, th {
+    &:not(:last-child){
+      border-right: 2px #FFFFFF solid;
+    }
+    padding-left: .25em;
+    padding-right: .25em;
+  }
+}
+.openlist{
+  &-available, &-buttons,&-chosen{
+    min-height: 15em;
+  }
+
+  &-available{
+    @include span(5 of 12 first);
+    select{
+      max-width: span(full);
+      min-width: span(full);
+    }
+  }
+  &-buttons{
+    @include span(2 of 12 at 6);
+    padding-top: 2em;
+  }
+  &-chosen{
+    @include span(5 of 12 last);
+    select{
+      max-width: span(full);
+      min-width:
+      span(full);
+    }
+  }
+}
+
+.modal-my-filters{
+  min-height : 25em;
+  label {
+    width: 100%;
+    display: block;
+
+  }
+  .label-block{
+    display: block;
+  }
+  footer{
+    div{
+      @include span(3 of 12 last);
+      text-align:right;
+    }
+  }
+}
+.openlist-buttons > button{
+  display: block;
+  margin: .5em;
+  width: 50%;
+  margin-left: 3em;
+}
+.openlist-buttons-chose-all{
+  @include icon-font(fast-fw,1.5em, #000000);
+}
+.openlist-buttons-remove-all{
+  @include icon-font(fast-bw,1.5em, #000000);
+}
+.openlist-buttons-choose-selected{
+  @include icon-font(right-dir,1.5em, #000000);
+}
+.openlist-buttons-remove-selected{
+  @include icon-font(left-dir,1.5em, #000000);
+}
+// .modal-header > h3{
+//   @include span(95%);
+//   margin: 0;
+//   font-size: 1.25em;
+// }
+.modal-close{
+  @include icon-font(cancel-circled, 16px);
+  @include span(4% last);
+}
+.filters-select select{
+  width: auto;
+}
+.myTasks-icon-style {
+  background-size: 50%;
+  background-position: 50% 5%;
+}
+.admit-icon-my-task,
+.discharge-icon-my-task,
+.readmission-icon-my-task {
+  @extend %icon-alpha;
+  @extend .General-sprite !optional;
+}
+.admit-icon-my-task {
+  background-position:0 -7200px;
+}
+.discharge-icon-my-task {
+  background-position:0 -7200px;
+}
+.readmission-icon-my-task {
+  background-position:0 -7200px;
+}
+footer div .button-primary{
+  margin:0 0 0 4px;
+}
+
+.back-to-home-holder{
+  position:relative;
+}
+
+.patient-search-filter-container{
+
+
+  accordion{
+    .panel-heading {
+      padding-left: 4px;
+    }
+      h4 > a{
+        @extend .LeftNav-left_nav_icon_carat !optional;
+        //@include icon-font('angle-circled-right', $color : #fff);
+        padding-left: 20px;
+        min-height : 18px;
+    }
+    .menu-expanded{
+      h4 > a{
+        //@include icon-font('angle-circled-down', $color : #fff);
+        @extend .LeftNav-left_nav_icon_carat_down  !optional;
+
+      }
+    }
+  }
+}
+.stepback-btn{
+  top: 20px;
+  position: absolute;
+  right: 15px;
+}
+
+// Add managed population: map reminder schedule
+.table {
+  .cell-task-name {
+    width: 33%;
+  }
+  .cell-frequency {
+  }
+  .cell-days {
+    width: 100px;
+  }
+  .cell-reminders {
+    width: 75px;
+  }
+}
+
+.caremanager-tasks-grid-width {
+  width: 100%;
+}
+
+.ngHeaderContainer.caremanager-tasks-header-width {
+  //width: 668px!important;
+}
+
+.ngViewport.caremanager-tasks-row-width {
+  //width: 667px!important;
+}
+
+.icon-margin-set{
+  margin-top:-5px;
+}
+.spinner-div{
+  position: absolute;
+  width: 100%;  
+  z-index: 1;
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+}
+.custom-spinner{
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  left: 45%;
+}
+.my-task-spinner {
+    .grid-repeat-height {
+      overflow-y: visible; 
+      min-height: 30px;
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+    .navbar-btn {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .table-bordered {
+          border: none;
+    }
+    img.custom-spinner {
+      height: 30px;
+    }
+}
+
+.completed-tasks{
+    overflow-y: auto;
+      .search-font{
+    margin-top: 0;
+    }
+    .task-panel {
+      height:52px;
+    }
+}

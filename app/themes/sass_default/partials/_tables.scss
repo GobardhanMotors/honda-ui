@@ -1,0 +1,391 @@
+// Tables
+
+/*Tables and grids*/
+$table_odd_color : #fff;
+$table_even_color : palette(grey,xxx-light);
+
+%table_header{
+  //@include contrasted(palette(grey,light),black,#fff);
+  background-color: palette(grey);
+  color: #fff;
+  height: 30px;
+}
+%table_cell_border {
+  padding-left: 3px;
+  border-left: 1px solid #ccc;
+}
+.ngHeaderContainer{
+  @extend %table_header;
+}
+.ngRow{
+ &.even{
+  background-color: $table_odd_color;
+ }
+ &.odd{
+  background-color: $table_even_color;
+ }
+ &:hover, &:focus{
+       @include contrasted(palette(blue,light));
+       }
+}
+
+.ngCellText.ngCellIcon {
+  padding: 5px;
+  text-align: center;
+}
+
+.ngCellMultiIcon {
+  padding: 5px;
+  text-align: center;
+  .btn {
+    margin-right: 10px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+
+.modal-body .table {
+  @include span(100%);
+  border: 1px solid #ddd;
+  margin-top: 3px;
+  margin-bottom: 2em;
+  text-align: left;
+  float: none;
+  .action-buttons{
+    button {
+      border-color: transparent;
+    }
+  }
+  .numeric {
+    text-align: right;
+    padding-right: 5px;
+  }
+
+  td,th {
+    @extend %table_cell_border;
+  }
+  thead {
+    th {
+      @extend %table_header;
+      @extend %table_cell_border;
+    }
+  }
+  tbody {
+    >tr{
+     height: 30px;
+     background-color: $table_even_color;
+     &:nth-child(odd){
+       background-color: $table_odd_color;
+       &:hover:not(.disabled), &:focus{
+       @include contrasted(palette(blue,light));
+       }
+     }
+     &:hover:not(.disabled), &:focus, &.selected{
+       @include contrasted(palette(blue,light));
+     }
+     &.disabled td {
+      background: #fff;
+      opacity: 0.3;
+      filter: alpha(opacity=30);
+     }
+    }
+    th[scope=row]{
+      font-weight: 700;
+      border : none;
+      +td{
+        border:none;
+      }
+    }
+    td {
+      @extend %table_cell_border;
+      min-height: 50px;
+    }
+  }
+
+}
+
+section.main {
+  table {
+    &.table-not-striped tbody > tr {
+      background-color: $table_odd_color;
+    }
+    @include span(100%);
+    border: 1px solid #ddd;
+    margin-top: 3px;
+    text-align: left;
+    float: none;
+    border: 1px solid #ddd;
+    .action-buttons{
+      button {
+        border-color: transparent;
+      }
+    }
+    .numeric {
+      text-align: right;
+      padding-right: 5px;
+    }
+    
+  }
+  td,th {
+    @extend %table_cell_border;
+  }
+  thead {
+    th {
+      @extend %table_header;
+      @extend %table_cell_border;
+    }
+  }
+  tbody {
+    >tr{
+      height: 30px;
+      background-color: $table_even_color;
+      &:nth-child(odd) {
+        background-color: $table_odd_color;
+        &:hover:not(.disabled), &:focus{
+        @include contrasted(palette(blue,light));
+        }
+      }
+      &:hover:not(.disabled), &:focus, &.selected{
+        @include contrasted(palette(blue,light));
+      }
+      td[rowspan] {
+         background-color: #fff;
+      }
+      &.disabled td {
+        background: #fff;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        &[rowspan], &.td-with-btn {
+          opacity: 1;
+          filter: alpha(opacity=100);
+        }
+      }
+      
+    }
+    th[scope=row]{
+      font-weight: 700;
+      border : none;
+      +td{
+        border:none;
+      }
+    }
+    td {
+      @extend %table_cell_border;
+      min-height: 50px;
+    }
+  }
+  tfoot {
+    @extend %t-strong;
+    td {
+      border-top: 1px solid palette(grey);
+    }
+  }
+  .table {
+    thead, tbody, tfoot{
+      tr{
+        th, td {
+          padding: 6px; //overriding Bootstrap styles;
+        }
+      }
+    }
+  }
+}
+
+.table-col-6 {
+  th, td {
+    width: 50%;
+  }
+}
+
+.table-col-3 {
+  th, td {
+    width: 25%;
+  }
+}
+
+td, th {
+  &.cell-20 {
+    width: 20%;
+  }
+  &.cell-15 {
+    width: 15%;
+  }
+  &.cell-col-3 {
+    width: 25%;
+  }
+  &.cell-col-6 {
+    width: 50%;
+  }
+  &.cell-col-9 {
+    width: 75%;
+  }
+}
+.table {
+  .checkbox-cell, .radio-cell {
+    width: 30px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 8px;
+    & + td>label {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.modal-body .table {
+  .checkbox-cell, .radio-cell {
+    padding: 8px;
+  }
+}
+
+
+.table .valign-middle {
+  vertical-align: middle;
+}
+
+
+table.table-action.table {
+  > tbody > tr > td, > tbody > tr > th {
+    vertical-align: middle;
+  }
+}
+
+.action-cell {
+  width: 50px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table-caption + .table {
+  margin-top: 0;
+}
+
+.table-caption {
+  position: relative;
+  color: #666;
+  background-color: #f5f5f5;
+  border: 1px #ddd solid;
+  border-bottom: 0;
+  padding: 1em;
+  font-weight: bold;
+  text-align: left;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  >.h3-style, >.heading {
+    margin: 0;
+  }
+}
+.table-caption-icon {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  .btn {
+    position: relative;
+  }
+}
+
+
+.table-left, .table-right {
+  width: 50%;
+}
+
+.table-left {
+  float: left;
+}
+
+.table-right {
+  float: right;
+}
+
+.two-tables {
+  background-color: #eee;
+  @extend .clearfix;
+  margin-bottom: 2em;
+  .table-left, .table-right {
+    .table {
+      margin-top: 0;
+      margin-bottom: 0;
+      > tbody > tr.non-cell > td {
+        border-color: #eee;
+        background-color: #eee;
+      }
+    }
+  }
+  .table-right {
+    table.table {
+      border-left: 0;
+      td, th {
+        &:first-child {
+          border-left: 0;
+        }
+      }
+    }
+  }
+}
+
+.table-with-pager {
+  margin-bottom: 0 !important;
+}
+
+.table-with-pager + .table-pager {
+  margin-top: 0;
+  margin-bottom: 1em;
+  border-top: 1px solid #d4d4d4;
+}
+
+.table-legend {
+  margin: 0;
+  .legend-icon {
+    margin-right: 5px;
+  }
+}
+
+.overflow-truncate {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+table.action-cell td.one-action-icon {
+  width: 40px;
+  text-align: center;
+  padding-right: 0;
+  padding-left: 0;
+}
+.two-action-icons {
+  width: 80px;
+  text-align: center;
+  padding-right: 0;
+  padding-left: 0;
+  .edit{
+		padding:0 5px;
+	}
+}
+
+.document-action-icons {
+  margin-left: 13px;
+}
+
+.ngGrid-action-icon-table {
+  .ngViewport {
+    max-height: 400px;
+  }
+}
+
+.nggrid-action {
+  vertical-align: middle;
+  text-align: center;
+  :first-child {
+    margin-right: 5px;
+  }
+}
+
+.ngViewport {
+  height: 100% !important;
+  max-height: 300px;
+  // Each row is 30px - so 10rows x 30px tall is 300px
+}
+

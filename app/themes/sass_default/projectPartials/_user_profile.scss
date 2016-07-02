@@ -1,0 +1,250 @@
+﻿%task-user-profile-label{
+  padding-top:4px;
+  width: 10em;
+  margin: 0 1em 0 0;
+  float:left;
+}
+.user-profile {
+	.panel-default.expanded .panel-collapse{
+		height:auto !important;
+	}
+  h4 {
+    padding-left: 0px;
+	padding-right: 10px;
+	border-left-width: 0px;
+  }
+  .panel-default > .panel-heading{
+	background:#EEEEEE;
+	border-color: #CCCCCC;
+	.panel-title > a{
+		font-weight: normal;
+		&hover{
+			color: #6FA8DF;
+		}
+	  }
+  }
+  .drop-down-error{
+		border: 1px #e06666 solid;
+	}
+	.ask-bundle-input-drop-down{
+	height: 31px;
+	}
+	.required-error{
+	    margin-left: 2px;
+	    color: #e06666;
+	}
+  input[type="text"],
+		textarea, select{
+		border: 1px #666666 solid;
+		color:#666666;
+	}
+	input[type="password"],
+		textarea, select{
+		border: 1px #666666 solid;
+		color:#666666;
+	}
+
+  .close-popup{
+	position:absolute;
+	right:17px;
+	top:14px;
+	margin:0;
+  }
+  .panel-group .panel:hover .panel-heading{
+	background:#FFFFFF;
+  }
+
+ .panel-body {
+
+    .row {
+        margin: .5em;
+	     input,
+	     select{
+		      width:58%;
+	     }
+	     input{
+	       &[type="radio"]{
+		        width:auto;
+		        height:auto;
+				margin-right: 3px;
+	       }
+	       &[type="password"]{
+		        width:56%;
+		        margin:0 0 10px 5px;
+      	 }
+      }
+      &.radios{
+		     margin-left:3px;
+		     padding-bottom: 3px;
+		     legend{
+		       @extend %task-user-profile-label;
+			   color:#333333;
+		     }
+		     .gender-selector{
+		       	width: auto;
+		       	padding-left: 1em;
+		       	float: left;
+				input[type="radio"]{
+					margin-top:7px;
+					margin-left:0em;
+				}
+		       }
+		     label {
+		       	width: auto;
+		      	}
+	     }
+	     label{
+		      @extend %task-user-profile-label;
+	     }
+
+    }
+  }
+  .my-health-information-popup-heading {
+		margin-top: 0;
+	}
+}
+.password-info-icon{
+	display:inline;
+	padding:0px 4px;
+	position:relative;
+}
+
+.save-password{
+	float:right;
+	clear:both;
+}
+.password-criteria {
+    position:relative;
+	display:inline;
+	cursor:pointer;
+}
+.password-criteria:hover .pop-up-pwd-criteria {
+    display:block;
+}
+.pop-up-pwd-criteria {
+    border-top: 4px solid #7DB9E8;
+    border-bottom: 1px solid #B2B2B2;
+    border-left: 1px solid #B2B2B2;
+    border-right: 1px solid #B2B2B2;
+    right: -289px;
+    width: 270px;
+    padding: 10px;
+    height: 275px;
+    position: absolute;
+    top: -123px;
+    background: #FFFFFF;
+    line-height: 1.5;
+    display: none;
+    z-index: 1;
+    ul {
+      margin-left: -3em;
+    }
+
+	ol{
+	 > li {
+		list-style-type: lower-alpha;
+	 }
+	}
+}
+.left-triangle {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    margin-top: -20px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    @include transform(rotate(135deg));
+    border-left: none;
+    border-top: none;
+}
+.password-info-text{
+    color: darkred;
+    width: 50%;
+    float: left;
+    text-align: center;
+    margin: 2px 0 5px 0;
+}
+
+.panel-group .panel-heading + .panel-collapse {
+
+  .change-password-section,.user-profile {
+    border-top: 0px;
+  }
+}
+
+.mismatch-pwd-msg{
+	display: block;
+	width: 40%;
+	float: right;
+	.alert-error{
+		background-color:#FFFFFF;
+		border-color:#FFFFFF;
+	}
+}
+.openCondition .my-profile-popup {
+  width: 950px;
+  position: absolute;
+  left: 50%;
+  margin-left: -475px;
+}
+.my-profile-popup {
+  .modal-content {
+    width: 950px;
+	border:1px solid #6fa8dc;
+  }
+  .modal-header {
+    border-bottom: 0px;
+  }
+}
+.cancellation-message {
+    margin-top:15px;
+	.close-messsage-alert{
+		width: 170px;
+		margin: 0 auto;
+	}
+  h5{
+  text-transform:inherit;
+  }
+}
+.my-health-information-popup-header{
+	position:relative;
+}
+.user-profile-info {
+  .form-group{
+    > div:first-child{
+      text-align: right;
+    }
+    .label-text.col-md-4{
+      width: 33.3%;
+      text-align: right;
+    }
+    &.radios{
+      input[type='radio']{
+        margin: 0;
+      }
+      label{
+        margin-right: 2em;
+      }
+      legend + div {
+        width: 60%;
+      }
+    }
+  }
+}
+
+.user-profile .change-password-section {
+  label.change-pw-label {
+    text-align: right;
+    width: 12em;
+  }
+}
+@media only screen and (max-width: 1024px){
+    .user-profile .panel-body .row input[type="password"]{
+		width:40%;
+	}
+}
+.tooltip-list{
+	white-space: normal;
+}

@@ -1,0 +1,361 @@
+//colors
+$color_tapa_approx: #777777;
+$color_alto_approx: #ddd;
+$white: #fff;
+$color_gallery_approx: #eee;
+$color_baby_blue_approx: #e2fafc;
+
+//fonts
+$font_0: 'Arial';
+$font_1: 'sans-serif';
+
+//@extend-elements
+//original selectors
+//h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+%extend_1 {
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: inherit;
+}
+
+//original selectors
+//h1 small, h1 .small, h2 small, h2 .small, h3 small, h3 .small, h4 small, h4 .small, h5 small, h5 .small, h6 small, h6 .small, .h1 small, .h1 .small, .h2 small, .h2 .small, .h3 small, .h3 .small, .h4 small, .h4 .small, .h5 small, .h5 .small, .h6 small, .h6 .small
+%extend_2 {
+	font-weight: normal;
+	line-height: 1;
+	color: $color_tapa_approx;
+}
+
+//original selectors
+//.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td
+%extend_3 {
+	padding: 8px;
+	line-height: 1.428571429;
+	vertical-align: top;
+	text-align: left!important;
+}
+
+
+@charset "UTF-8";
+html {
+	font-family: $font_0, $font_1;
+}
+body {
+	margin: 0;
+}
+h1 {
+	@extend %extend_1;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 36px;
+	small {
+		@extend %extend_2;
+		font-size: 65%;
+	}
+	.small {
+		@extend %extend_2;
+		font-size: 65%;
+	}
+}
+h2 {
+	@extend %extend_1;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 30px;
+	small {
+		@extend %extend_2;
+		font-size: 65%;
+	}
+	.small {
+		@extend %extend_2;
+		font-size: 65%;
+	}
+}
+h3 {
+	@extend %extend_1;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 24px;
+	small {
+		@extend %extend_2;
+		font-size: 65%;
+	}
+	.small {
+		@extend %extend_2;
+		font-size: 65%;
+	}
+}
+h4 {
+	@extend %extend_1;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 18px;
+	small {
+		@extend %extend_2;
+		font-size: 75%;
+	}
+	.small {
+		@extend %extend_2;
+		font-size: 75%;
+	}
+}
+h5 {
+	@extend %extend_1;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	small {
+		@extend %extend_2;
+		font-size: 75%;
+	}
+	.small {
+		@extend %extend_2;
+		font-size: 75%;
+	}
+}
+h6 {
+	@extend %extend_1;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 12px;
+	small {
+		@extend %extend_2;
+		font-size: 75%;
+	}
+	.small {
+		@extend %extend_2;
+		font-size: 75%;
+	}
+}
+.h1 {
+	@extend %extend_1;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 36px;
+	small {
+		@extend %extend_2;
+		font-size: 65%;
+	}
+	.small {
+		@extend %extend_2;
+		font-size: 65%;
+	}
+}
+.h2 {
+	@extend %extend_1;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 30px;
+	small {
+		@extend %extend_2;
+		font-size: 65%;
+	}
+	.small {
+		@extend %extend_2;
+		font-size: 65%;
+	}
+}
+.h3 {
+	@extend %extend_1;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 24px;
+	small {
+		@extend %extend_2;
+		font-size: 65%;
+	}
+	.small {
+		@extend %extend_2;
+		font-size: 65%;
+	}
+}
+.h4 {
+	@extend %extend_1;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 18px;
+	small {
+		@extend %extend_2;
+		font-size: 75%;
+	}
+	.small {
+		@extend %extend_2;
+		font-size: 75%;
+	}
+}
+.h5 {
+	@extend %extend_1;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	small {
+		@extend %extend_2;
+		font-size: 75%;
+	}
+	.small {
+		@extend %extend_2;
+		font-size: 75%;
+	}
+}
+.h6 {
+	@extend %extend_1;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 12px;
+	small {
+		@extend %extend_2;
+		font-size: 75%;
+	}
+	.small {
+		@extend %extend_2;
+		font-size: 75%;
+	}
+}
+table {
+	background-color: transparent;
+}
+th {
+	text-align: left;
+	width: 16.6%;
+}
+.table {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 20px;
+	> {
+		thead {
+			> tr > {
+				th {
+					@extend %extend_3;
+					vertical-align: bottom;
+					border-bottom: 2px solid $color_alto_approx;
+				}
+				td {
+					@extend %extend_3;
+				}
+			}
+			&:first-child > tr:first-child > {
+				th {
+					border-top: 0;
+				}
+				td {
+					border-top: 0;
+				}
+			}
+		}
+		tbody {
+			> tr > {
+				th {
+					@extend %extend_3;
+				}
+				td {
+					@extend %extend_3;
+				}
+			}
+			+ tbody {
+				border-top: 2px solid $color_alto_approx;
+			}
+		}
+		tfoot > tr > {
+			th {
+				@extend %extend_3;
+			}
+			td {
+				@extend %extend_3;
+			}
+		}
+		caption + thead > tr:first-child > {
+			th {
+				border-top: 0;
+			}
+			td {
+				border-top: 0;
+			}
+		}
+		colgroup + thead > tr:first-child > {
+			th {
+				border-top: 0;
+			}
+			td {
+				border-top: 0;
+			}
+		}
+	}
+	.table {
+		background-color: $white;
+	}
+}
+.table-bordered {
+	border: 1px solid $color_alto_approx;
+	> {
+		thead > tr > {
+			th {
+				border: 1px solid $color_alto_approx;
+				border-bottom-width: 2px;
+			}
+			td {
+				border: 1px solid $color_alto_approx;
+				border-bottom-width: 2px;
+			}
+		}
+		tbody > tr > {
+			th {
+				border: 1px solid $color_alto_approx;
+			}
+			td {
+				border: 1px solid $color_alto_approx;
+			}
+		}
+		tfoot > tr > {
+			th {
+				border: 1px solid $color_alto_approx;
+			}
+			td {
+				border: 1px solid $color_alto_approx;
+			}
+		}
+	}
+}
+.table-condensed > {
+	thead > tr > {
+		th {
+			padding: 5px;
+		}
+		td {
+			padding: 5px;
+		}
+	}
+	tbody > tr > {
+		th {
+			padding: 5px;
+		}
+		td {
+			padding: 5px;
+		}
+	}
+	tfoot > tr > {
+		th {
+			padding: 5px;
+		}
+		td {
+			padding: 5px;
+		}
+	}
+}
+.table-striped > tbody > tr:nth-child(odd) > {
+	td {
+		background-color: $color_gallery_approx;
+	}
+	th {
+		background-color: $color_gallery_approx;
+	}
+}
+.table-hover > tbody > tr:hover > {
+	td {
+		background-color: $color_baby_blue_approx;
+	}
+	th {
+		background-color: $color_baby_blue_approx;
+	}
+}

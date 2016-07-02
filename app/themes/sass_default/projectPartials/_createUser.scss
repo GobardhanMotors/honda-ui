@@ -1,0 +1,239 @@
+// user details
+%create-user-form-label{
+  float: left;
+    width: 20%;
+    display: inline-block;
+    text-align: left;
+    padding-right:1em;
+}
+.define-role {
+  @extend .clearfix;
+  padding: 0 0 1em 20px;
+}
+
+.role-list {
+  @extend .list-unstyled;
+  .delete-btn {
+    float: right;
+  }
+
+}
+.role-table.table {
+  margin: 1em 0 0 0;
+}
+
+.reset-password {
+  margin-left: 20%;
+}
+
+.create-user-form {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+  label {
+    @extend %create-user-form-label;
+  }
+}
+.update-demographics .create-user-form {
+  width: 90%;
+  input {
+    &[type=text], &[type=phone],  &[type=email], &[type=password] {
+      width: 80%;
+      margin-top: -3px;
+      margin-bottom: 1em;
+      display: inline-block;
+    }
+  }
+  select {
+    margin-top: -3px;
+    width: 44%;
+    display: inline-block;
+  }
+  .create-short {
+      width: 44%;
+  }
+  .gender-group {
+    width:80%;
+    legend {
+      @extend %create-user-form-label;
+    }
+    label { 
+      float: none;
+    }
+    input[type=radio] {
+      height: auto;
+    }
+  }
+  .form-control-static {
+    padding-top: 0;
+  }
+  .user-search-radio {
+    margin-top: 1px;
+    margin-right: 7px;
+  }
+  .user-radio-label {
+    width: 62px;
+  }
+  .user-search-radio {
+    width: 14px;
+    float: left;
+    height: 16px;
+  }
+  .pw-info {
+    float: right;
+    margin-right: -3em;
+    margin-top: -2px;
+  }
+  .notification-label {
+    margin-left: 20%;
+  }
+}
+
+.user-credentials .has-error{
+  color: red;
+  padding-left: 32px;
+}
+
+.checkbox-container {
+  width: 70%;
+  label {
+    float: right;
+    margin-right: 6em;
+    margin-top: -2px;
+    width: 150px;
+  }
+  input {
+    width: 48%;
+  }
+}
+
+.role-container {
+  input[type="checkbox"] {
+    margin: none;
+  }
+  .clinic-check {
+    margin-left: -6em;
+    width: 50%;
+    li {
+      margin-bottom: 2em;
+      overflow: hidden;
+      label {
+        float: left;
+        margin-top: 6px;
+        font-size: 16px;
+        margin-left: 0.5em;
+      }
+    }
+  }
+  padding-left: 4em;
+  padding-top: 2em;
+  .role-box {
+    width: 20px;
+    height: 20px;
+    float: left;
+    display: inline;
+  }
+  .role-dropdown {
+    height: 28px;
+    width: 51%;
+    padding: 0px 0px 0px 9px;
+  }
+  .clinic-select {
+    margin-left: -30px;
+    margin-top: 17em;
+    .clinic-admin-dd {
+      float: left;
+    }
+    .roles-form-group {
+      margin-bottom: 26px;
+    }
+  }
+  .physician-select {
+    width: 90%;
+    float: right;
+    margin-right: -14em;
+    margin-top: -4.5em;
+
+  }
+  .clinic-admin-dd {
+    margin-bottom: 21px;
+  }
+  .physician-dd {
+    margin-left: -13px;
+    float: left;
+  }
+  .insurance-dd {
+    float: left;
+  }
+}
+
+.add-role-button {
+  float: left;
+  margin-left: 0.5em;
+  cursor: pointer;
+}
+
+.clinic-list {
+  float: left;
+  margin-left: -2px;
+  li {
+    margin-bottom: 19px;
+  }
+  span {
+    float: right;
+    margin-left: 6px;
+    margin-top: -7px;
+  }
+  .role-spacer {
+    margin-bottom: 20px;
+  }
+}
+
+.faux-label {
+  float: left;
+  font-weight: bold;
+  margin-right: 5em;
+}
+
+.summary-table > div > div:nth-child(even) {
+  font-weight: bold;
+}
+
+// Adding a not so it doesn't affect the wizard flow
+.success:not(li) {
+  background-color: #6AA84F;
+  color: #fff;
+  width: 100%;
+  height: 5em;
+  p {
+    font-size: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 0.5em;
+  }
+}
+.new-password-field {
+	label {
+		width:175px;
+		text-align:right;
+	}
+	input[type="password"] {
+		width:30%;
+		display:inline-block;
+	}
+}
+.required-indication {
+  margin-left: 4px;
+}
+.create-user-form label.text-left {
+  text-align:left;
+}
+.create-user-form {
+	.user-credentials-status {
+		.status {
+			width:auto;
+		}
+	}
+}

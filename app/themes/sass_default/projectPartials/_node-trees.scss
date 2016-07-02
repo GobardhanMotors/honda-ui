@@ -1,0 +1,123 @@
+// Node Trees
+
+.node-tree-root {
+	font-size: 1em;
+	.node-tree {
+		@extend .list-unstyled;
+		padding-left: 0;
+		margin-top: -1em;
+		> li:not(:last-child) {
+      border-bottom: 1px solid #eee;
+    }
+    >li {
+      padding: 1em 0;
+    }
+		.node-title {
+			font-size: 0.5em;
+		}
+		.node-tree {
+			.node-title {
+				font-size: 0.25em;
+			}
+		} // end node-tree in node-tree
+	}// end node-tree
+}
+
+.list-tree {
+	margin-left: 0;
+	padding-left: 0;
+	> li:not(:last-child) {
+    	border-bottom: 1px solid #eee;
+  }
+}
+.tree-node {
+  @extend .list-unstyled;
+  color: $noble;
+  position: relative;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0 0 1em 2em;
+  margin-top: 1em;
+  > a {
+    text-decoration: none;
+    color: $noble;
+    display: block;
+    &:before {
+      @extend .glyphicon;
+      @extend .glyphicon-chevron-right:before;
+      position: absolute;
+      left: 0;
+    }
+  }
+  
+  &:hover, &:focus, &.expanded {
+    a {
+      color: $sg_bashful_blue;
+    }
+  }
+  &.expanded {
+    > a:before {
+      @extend .glyphicon-chevron-down:before;
+    }
+  }
+  > ul {
+    font-weight: normal;
+    font-size: 1em;
+    margin-bottom: 1em;
+    > li {
+      margin: 0.5em 0;
+    }
+  }
+}
+
+.tree-col {
+  @extend .list-unstyled;
+  color: $noble;
+  position: relative;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0 0 1em 2em;
+  margin-top: 1em;
+  &:before {
+  	@extend .glyphicon;
+    @extend .glyphicon-chevron-right:before;
+  	position: absolute;
+  	left: 0;
+  }
+  &:hover, &:focus, &.expanded {
+  	color: $sg_bashful_blue;
+  }
+  &.expanded:before {
+		@extend .glyphicon-chevron-down:before;
+  }
+  > ul {
+  	font-weight: normal;
+  	font-size: 1em;
+  	margin-bottom: 1em;
+  	> li {
+  		margin: 0.5em 0;
+  	}
+  }
+}
+
+.angular-ui-tree-handle {
+  font-weight: normal;
+}
+
+.tree-exp {
+	position: relative;
+	&:before {
+		@extend .glyphicon;
+		@extend .glyphicon-chevron-down:before;
+		position: absolute;
+		left: 0;
+	}
+}
+
+.tree-exp-col-cont {
+  text-decoration: underline;
+  display: block;
+  padding-left: 30px;
+  line-height: 25px;
+}
+

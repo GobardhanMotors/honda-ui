@@ -1,0 +1,5 @@
+<?xml version="1.0" standalone="yes"?>
+<svg width="512" height="445">
+<path style="fill:#010101; stroke:none;" d="M0 0L0 445L511 445L511 0L0 0z"/>
+<path style="fill:#ffffff; stroke:none;" d="M511 0L511 445C514.407 436.882 512 423.797 512 415L512 347L512 111L512 34C512 24.1528 514.808 9.07391 511 0z"/>
+</svg>

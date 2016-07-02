@@ -1,0 +1,237 @@
+﻿.header-grid {
+  background-color: #666666;
+	padding: 5px 0 5px 0;
+	color: white;
+	font-weight: bold;
+}
+.segmentation-label {
+  padding: 12px 0px 0px 0px;
+	font-weight: bold;
+}
+#num-segmantation .form-control {
+  width: 42%;
+}
+ #num-segmantation select {
+width: 40% ;
+margin-right: 5px;
+padding:6px;
+height:30px;
+}
+ .segmentation-label {
+      padding: 10px 0px 0px 0px;
+    }
+    .segmentation-row {
+      padding-top: 5px;
+      padding-bottom: 5px;
+			.col-xs-12.col-md-1{
+				padding: 8px;
+			}
+    }
+
+    .padding-reset-right {
+      padding-right: 0;
+    }
+.stacked-label {
+  padding-top: 10px;
+  padding-left: 5px;
+	font-weight: bold;
+}
+
+.trim-left {
+  padding-left: 0;
+}
+.stacked-top {
+  padding-top: 10px;
+}
+.divider {
+  border: 1px solid #ccc;
+	float: left;
+	width: 100%;
+}
+#formula-preview .well {
+  background-color: #fff;
+}
+
+.info-icon-align{
+  margin: 4px 0 0 -10px;
+}
+
+.info-icon-size{
+  height: 24px;
+}
+.formula-preview{
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+.summary-gi-content{
+border: 2px solid #666;
+background-color: #ccc;
+}
+.numerator-color{
+color: rgb(190, 18, 18);
+font-weight: bold;
+}
+.denominator-color{
+color: rgb(0,0,255);
+font-weight: bold;
+}
+.notification-message .glyphicon-remove-circle {
+top: -1px;
+}
+.notification-message{
+	.alert-success {
+		background:#E1EDDB;
+		border: 1px solid #6AA84F;
+		border-radius: 3px;
+		color: #6AAF84;
+		font-size: 12px;
+	}
+	.alert-error {
+		background: #F8E0E0;
+		border: 1px solid #E06666;
+		border-radius:3px;
+		color: #E06666;
+	}
+}
+.add-metric{
+	margin:30px 0 0 0;
+	 select, input {
+		width:60%;
+		margin: 0;
+		padding: 0;
+	}
+
+}
+.metrics-list-holder{
+	.panel-heading .accordion-toggle-arrow-style{
+		font-weight:normal;
+	}
+	.task-bundle-label{
+		float:left;
+		padding-right: 3px;
+		width:50%;
+	}
+	.task-bundle-input-label{
+		width:60px;
+	}
+	input[type="radio"]{
+		height:auto;
+	}
+	.task-bundle-row-label-input{
+		float:left;
+		margin-bottom:4px;
+	}
+	.btn-primary, .btn-secondary{
+		margin:0 2px;
+	}
+	.row{
+		margin:4px 0;
+	}
+	input[type="text"]{
+		width:50%;
+		border: 1px #CCC solid;
+	}
+	.panel-default > .panel-heading{
+		color:#333333;
+		&:hover{
+			background-color: whitesmoke;
+		}
+		a{
+			font-weight:normal;
+		}
+	}
+	.panel-default.expanded > .panel-heading{
+		color:#6fa8dc;
+		&:hover{
+			background-color: #FFF;
+		}
+	}
+}
+
+
+ .generalInformation .infoRowStacked {
+      padding: 5px 0px 5px 0;
+    }
+    .generalInformation .margin-reset {
+      margin: 0;
+    }
+    .generalInformation .collapseOne .general-info-radio-label {
+      margin: 5px 0px 0px 5px;
+    }
+    .generalInformation .stacked-top-small {
+      margin-top: 5px;
+    }
+		.stacked-bottom-med{
+		margin-bottom: 10px;
+		}
+		.generalInformation input[type="text"],
+		.generalInformation textarea, .generalInformation select{
+		border: 1px #CCC solid;
+		color:#666666;
+	}
+	select, textarea {
+	font-size: 12px ;
+	}
+	.add-icon-text{
+	position: relative;top: -6px;
+	}
+	.metrics-list-holder .badge{
+	  background-color: #e06666;
+    border: 1px solid #e06666;
+    padding-top: 7px;
+	}
+	.add-edu-frm-select{
+	position: relative;
+	right: 63px;
+	}
+	.floatNone{
+	float: none ;
+	}
+	.stacked-left-lg{
+	margin-left: 15px;
+	}
+
+.add-task {
+  width: 30px;
+  height: 30px;
+  float: left;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  color: #FFF;
+  text-align: center;
+  font-size: 14px;
+  padding-top: 3px;
+  @extend .General-sprite;
+  background-position: 0px -786px;
+  line-height: 18px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.add-link {
+  line-height: 25px;
+}
+.lb-button-list{
+	margin-top:10px;
+}
+.admin-metrics .stacked-bottom-med {
+	line-height: 30px;
+}
+.edit-metric-info{
+	margin:3px 3px 0 0;
+	.tooltip-inner{
+		border-top-color: #ff9900;
+	}
+}
+.pl-10{
+	padding:0 0 0 10px;
+}
+.cancellation-alert-message{
+	.btn {
+		min-width:100px;
+	}
+	h5{
+		text-transform: initial;
+	}
+}
