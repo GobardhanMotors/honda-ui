@@ -328,6 +328,57 @@ var timeStamp = "bust=" + (new Date()).getTime(),
 	    <a ng-click="urlChange('home')">Contact</a>
 	    <a ng-click="urlChange('about')">About</a>
 	  </div>
+
+
+
+
+
+new-------
+	
+	
+	    <style>
+        .topnav {
+          overflow: hidden;
+          background-color: darkred;
+        }
+        .topnav a {
+          float: left;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+
+        .topnav a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+
+        .topnav a.active {
+          background-color: #1010ff;
+          color: white;
+        }
+    </style>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a ng-click="home()" style="color: #fff;">eCommerce World</a>
+        </div>
+
+        <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" name="query" placeholder="Search">
+            </div>
+            <button ng-click="search()" class="btn btn-default">Submit</button>
+            <a ui-sref="cart">
+                <button type="button" ng-click="viewCart()" class="btn btn-success">
+                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Cart
+                </button>
+            </a>
+        </form>
+    </div>
+</nav>
         
 
 -----------------------------home.html--------------------------------------------
